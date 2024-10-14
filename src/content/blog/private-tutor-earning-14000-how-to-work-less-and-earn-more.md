@@ -12,9 +12,7 @@ author: "Haris Samingan"
 tags: [tutoring, education, business growth]
 ---
 
-**How I Would Help Tutor Earning $14,000 Per Month, Working Everyday, to Earn More and Work Less**
-
-Imagine working every day of the week, without a single day off. Sounds exhausting, right? But for one private tutor, this lifestyle brings in an impressive income of around $13,000 to $14,000 a month. They’re doing it all by themselves, tutoring students from Monday to Friday in the evenings, and on weekends from morning till night. Let's break down how it works, what it means, and if there's a way to make it better.
+I saw in reddit this tutor earned $14,000 per month. That is really impressive. So how does this tutor do it?
 
 **A Look at the Hours**
 
