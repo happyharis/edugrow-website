@@ -1,7 +1,7 @@
 ---
 draft: false
-title: "How I help grew Sigma School to 7 Figures"
-snippet: "We will explore on how hiring help could increase this tutor hourly rate while reducing work hours."
+title: "How we helped grew Sigma School to 7 Figures"
+snippet: "3 things: price increase, stopped teaching, a lot of reviews"
 image: {
     src: "/sigma-school.jpg",
     alt: "private tutoring insights"
@@ -11,9 +11,6 @@ category: "Education"
 author: "Haris Samingan"
 tags: [tutoring, education, business growth]
 ---
-
-
-# How I help grew Sigma School to 7 Figures
 
 _Context: Sigma School is where we help people learn coding to get a job_
 
