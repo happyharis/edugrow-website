@@ -1,10 +1,15 @@
 ---
 draft: false
-name: "Haris Samingan"
-title: "Founder & CEO"
-avatar: {
-    src: "https://pbs.twimg.com/profile_images/1587405892437221376/h167Jlb2_400x400.jpg",
-    alt: "Haris Samingan"
+title: "How I increase Next Level Academy's Profits"
+snippet: "We will explore on how hiring help could increase this tutor hourly rate while reducing work hours."
+image: {
+    src: "/next-level-academy.jpg",
+    alt: "private tutoring insights"
 }
-publishDate: "2022-10-14 18:09"
+publishDate: "2024-10-14 11:39"
+category: "Education"
+author: "Haris Samingan"
+tags: [tutoring, education, business growth]
 ---
+
+hello

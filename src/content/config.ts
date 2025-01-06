@@ -17,6 +17,22 @@ const blogCollection = defineCollection({
     tags: z.array(z.string()),
   }),
 });
+// 2. Define your collection(s)
+const caseStudiesCollection = defineCollection({
+  schema: z.object({
+    draft: z.boolean(),
+    title: z.string(),
+    snippet: z.string(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    publishDate: z.string().transform(str => new Date(str)),
+    author: z.string().default('Astroship'),
+    category: z.string(),
+    tags: z.array(z.string()),
+  }),
+});
 
 const teamCollection = defineCollection({
   schema: z.object({
@@ -36,4 +52,5 @@ const teamCollection = defineCollection({
 export const collections = {
   'blog': blogCollection,
   'team': teamCollection,
+  'case-studies': caseStudiesCollection
 };
