@@ -6,7 +6,7 @@ image: {
     src: "/sigma-school.jpg",
     alt: "private tutoring insights"
 }
-publishDate: "2024-10-14 11:39"
+publishDate: "2025-01-06 11:39"
 category: "Education"
 author: "Haris Samingan"
 tags: [tutoring, education, business growth]
