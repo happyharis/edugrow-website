@@ -4,36 +4,48 @@ const templates = [
     title: "Next Level Academy",
     description: "Improved offering and pricing, increased profits",
     image: "/next-level-academy.jpg",
-    link: "/case-studies/next-level-academy"
+    link: "/case-studies/next-level-academy",
+    external: false
   },
   {
     title: "Sigma School",
     description: "Help implemented systems, processes and automations. Business grew 6 to 7 figures.",
     image: "/sigma-school.jpg",
-    link: "/case-studies/sigma-school"
+    link: "/case-studies/sigma-school",
+    external: false
   },
   {
     title: "Next: You",
     description: "Get on a free strategy call and we can discuss how we can help",
     image: "/next-you.jpg",
-    link: "/startup-template"
+    link: "https://edu8.org/meet",
+    external: true
   },
-  
 ];
 ---
 <div class="mt-16">
     <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
       Companies we have grown
-   </h2>
+    </h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
   {templates.map(template => (
     <div class="mt-8 bg-white rounded-lg shadow-md overflow-hidden">
-      <a href={template.link} class="block">
+      <a 
+        href={template.link} 
+        target={template.external ? "_blank" : "_self"}
+        rel={template.external ? "noopener noreferrer" : ""}
+        class="block"
+      >
         <img src={template.image} alt={template.title} class="w-full h-48 object-cover" />
       </a>
       <div class="p-4">
-        <a href={template.link} class="block">
+        <a 
+          href={template.link}
+          target={template.external ? "_blank" : "_self"}
+          rel={template.external ? "noopener noreferrer" : ""}
+          class="block"
+        >
           <h3 class="text-xl font-bold mb-2">{template.title}</h3>
         </a>
         <p class="text-gray-600">{template.description}</p>

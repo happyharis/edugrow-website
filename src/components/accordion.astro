@@ -1,0 +1,34 @@
+---
+export interface AccordionItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: AccordionItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="accordion">
+  {items.map((item, index) => (
+    <details class="mb-4" key={index}>
+      <summary class="cursor-pointer bg-gray-100 py-2 px-4 rounded-lg text-lg font-medium">
+        {item.question}
+      </summary>
+      <p class="mt-2 text-gray-700 px-4">
+        {item.answer}
+      </p>
+    </details>
+  ))}
+</div>
+
+<style>
+.accordion details[open] summary {
+  background-color: #f0f0f0;
+}
+.accordion summary:hover {
+  background-color: #e0e0e0;
+}
+</style>

@@ -1,0 +1,43 @@
+---
+const services = [
+  {
+    title: "Free Resources",
+    description: "Access a collection of free tools, guides, and materials to get started.",
+    image: "/automation-blueprint.jpg",
+    link: "resources"
+  },
+  {
+    title: "Coaching Programme",
+    description: "Personalized coaching to help you grow and scale your business.",
+    image: "/coaching.jpg",
+    link: "/coaching"
+  },
+  {
+    title: "Automate & AI",
+    description: "We help build automations and AI for you to streamline your operations.",
+    image: "/automate-ai.jpg",
+    link: "/services/automate-ai"
+  },
+];
+---
+
+<div class="py-16">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    How we help you 
+  </h2>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+    {services.map(service => (
+      <div class="text-left">
+        <a href={service.link} class="block">
+          <img src={service.image} alt={service.title} class="w-full h-48 object-cover mb-4" />
+        </a>
+        <a href={service.link} class="block">
+          <h3 class="text-xl font-bold mb-2">{service.title}</h3>
+        </a>
+        <p class="text-gray-600 mb-4">{service.description}</p>
+        <a href={service.link} class="inline-block bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Learn More</a>
+      </div>
+    ))}
+  </div>
+</div>
