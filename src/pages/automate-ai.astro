@@ -1,0 +1,276 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Accordion from "@components/accordion.astro";
+
+const expert = {
+  name: "Haris, Head of Technology",
+  credentials: [
+    "ex-Google Developer Expert",
+    "Built an app to over 100k downloads",
+    "Saved clients 1000+ hours through automation",
+  ]
+};
+
+const solutions = [
+  {
+    title: "Automated Invoicing & Payments",
+    icon: "invoice",
+    description: "Streamline your billing process with automated invoice generation and PayNow integration.",
+    features: [
+      "Automatic invoice generation",
+      "PayNow QR code integration",
+      "Payment tracking & reconciliation"
+    ]
+  },
+  {
+    title: "AI-Powered Learning Portal",
+    icon: "learning",
+    description: "Personalized learning experience with AI-driven insights and progress tracking.",
+    features: [
+      "Strength & weakness analysis",
+      "Personalized learning paths",
+      "Progress tracking & analytics"
+    ]
+  },
+  // Add more solutions here as needed
+];
+
+const businessOffer = {
+  title: "AI & Automation Solutions",
+  description: "Transform your business with custom automation and AI integration",
+};
+
+const faq = [
+  {
+    question: "How long does implementation typically take?",
+    answer: "Implementation time varies based on complexity, but most solutions are deployed within 4 or more."
+  }
+];
+
+const painPoints = [
+  {
+    title: "Drowning in repetitive tasks?",
+    description: "Spending countless hours on manual processes that could be automated, reducing your team's productivity and focus on strategic work.",
+    icon: "sad"
+  },
+  {
+    title: "Struggling to implement AI effectively?",
+    description: "Confused about how to leverage AI technologies in your business while ensuring practical, measurable results.",
+    icon: "sad"
+  },
+  {
+    title: "Complex systems not talking to each other?",
+    description: "Dealing with disconnected tools and platforms that create data silos and workflow bottlenecks.",
+    icon: "sad"
+  }
+];
+
+const framework = [
+  {
+    step: "Analyze",
+    description: "We assess your current workflows and identify automation opportunities",
+    number: 1
+  },
+  {
+    step: "Design",
+    description: "We create custom automation solutions and AI integration strategies",
+    number: 2
+  },
+  {
+    step: "Implement",
+    description: "We build and deploy your automated systems with seamless AI integration",
+    number: 3
+  }
+];
+
+const eligibilityCriteria = [
+  {
+    title: "Ready for digital transformation",
+    description: "Committed to modernizing your business processes through automation and AI",
+    icon: "calendar"
+  },
+  {
+    title: "Has clear business objectives",
+    description: "Know which processes need improvement and ready to implement solutions",
+    icon: "briefcase"
+  },
+  {
+    title: "Values long-term efficiency",
+    description: "Looking for sustainable, scalable solutions that grow with your business",
+    icon: "check"
+  }
+];
+---
+
+<Layout title="AI & Automation Solutions">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{businessOffer.title}</Fragment>
+      <Fragment slot="desc">{businessOffer.description}</Fragment>
+    </Sectionhead>
+
+    <main class="mt-16">
+      <!-- Pain Points Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-6">Are You...</h2>
+        <div class="space-y-6">
+          {painPoints.map((point) => (
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 flex-shrink-0">
+                {point.icon === "sad" && (
+                  <svg class="w-full h-full text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke-width="2" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16s-1.5-2-4-2-4 2-4 2" />
+                    <line x1="9" y1="9" x2="9.01" y2="9" stroke-width="3" stroke-linecap="round" />
+                    <line x1="15" y1="9" x2="15.01" y2="9" stroke-width="3" stroke-linecap="round" />
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h3 class="font-medium mb-2">{point.title}</h3>
+                <p class="text-gray-600">{point.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Framework Section with Pointers -->
+      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-6">Our Solution Framework</h2>
+        <div class="space-y-6">
+          {framework.map((item) => (
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 flex-shrink-0 bg-blue-500 rounded-full text-white flex items-center justify-center font-semibold">
+                {item.number}
+              </div>
+              <div>
+                <h3 class="font-medium mb-2">{item.step}</h3>
+                <p class="text-gray-600">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Solutions We Build Section -->
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Solutions We Build</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {solutions.map((solution) => (
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
+          <div class="flex items-center mb-4">
+            {solution.icon === "invoice" && (
+              <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+            )}
+            {solution.icon === "learning" && (
+              <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            )}
+            <h3 class="text-xl font-semibold">{solution.title}</h3>
+          </div>
+          <p class="text-gray-600 mb-4">{solution.description}</p>
+          <ul class="space-y-2">
+            {solution.features.map((feature) => (
+              <li class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+    
+      <!-- Expert Section -->
+      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
+        <div class="flex flex-col md:flex-row items-start gap-8">
+          <div class="flex-1">
+            <h2 class="text-2xl font-semibold mb-4">Meet the Team</h2>
+            <h3 class="text-xl font-medium mb-2">{expert.name}</h3>
+            <ul class="space-y-2">
+              {expert.credentials.map(credential => (
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {credential}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="md:w-1/3 aspect-square rounded-lg overflow-hidden">
+            <img 
+              src="/haris.jpg" 
+              alt="Our Expert Team" 
+              class="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Ideal Client Section -->
+      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-6">Perfect For Businesses That...</h2>
+        <div class="space-y-6">
+          {eligibilityCriteria.map((criteria) => (
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 flex-shrink-0">
+                {criteria.icon === "calendar" && (
+                  <svg class="w-full h-full text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke-width="2"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke-width="2"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"/>
+                  </svg>
+                )}
+                {criteria.icon === "briefcase" && (
+                  <svg class="w-full h-full text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke-width="2"/>
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke-width="2"/>
+                  </svg>
+                )}
+                {criteria.icon === "check" && (
+                  <svg class="w-full h-full text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h3 class="font-medium mb-2">{criteria.title}</h3>
+                <p class="text-gray-600">{criteria.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 text-center">
+          <a 
+            href="https://edu8.org/meet" 
+            target="_blank"
+          rel="noopener noreferrer"
+            class="inline-block bg-black text-white py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors">
+            Schedule a Consultation
+          </a>
+          <p class="mt-4 text-gray-600 text-sm italic max-w-md mx-auto">
+            Limited availability! Book your free consultation to discuss your automation needs and discover how we can help transform your business.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="mt-16">
+        <h2 class="text-2xl mb-4 font-semibold">Frequently Asked Questions</h2>
+        <Accordion items={faq} />
+      </section>
+    </main>
+  </Container>
+</Layout>
