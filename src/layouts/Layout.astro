@@ -33,6 +33,16 @@ const makeTitle = title
     <meta name="generator" content={Astro.generator} />
     <Analytics />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ4NG4RSK1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TJ4NG4RSK1');
+    </script>
+
     <SEO
       title={makeTitle}
       description="EduGrow is a consultancy to scale education business"
