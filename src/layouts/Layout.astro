@@ -31,6 +31,12 @@ const makeTitle = title
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/edugrow.png" />
     <meta name="generator" content={Astro.generator} />
+
+        <!-- MailerLite Universal -->
+        <script>
+          (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '1187075');
+        </script>
+        <!-- End MailerLite Universal -->
     <Analytics />
 
     <!-- Google tag (gtag.js) -->
@@ -65,15 +71,7 @@ const makeTitle = title
       }}
     />
 
-        <!-- MailerLite Universal -->
-    <script>
-      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-      ml('account', '1187075');
-    </script>
-    <!-- End MailerLite Universal -->
+    
   </head>
   <body>
     <Navbar />
