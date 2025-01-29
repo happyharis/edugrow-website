@@ -35,6 +35,8 @@ const { title, lastItem, children } = Astro.props;
             children.map((item) => (
               <a
                 href={item.path}
+                target={item.path.startsWith("http") ? "_blank" : "_self"}
+                rel={item.path.startsWith("http") ? "noopener noreferrer" : ""}
                 class="py-1 text-gray-600 hover:text-gray-900">
                 {item.title}
               </a>

@@ -1,43 +1,106 @@
 ---
+// services.astro
+
 const services = [
-  {
-    title: "Free Resources",
-    description: "Access a collection of free tools, guides, and materials to get started.",
-    image: "/automation-blueprint.jpg",
-    link: "resources"
+{
+    id: 'lead-magnet',
+    title: "7 Figure Tuition Guide",
+    description: "Discover the framework to scale your tuition business to 7 figures.",
+    buttonText: "Download Free Guide",
+    imageUrl: "/7-fig.png",
+    imageAlt: "7 Figure Tuition Business Guide",
+    buttonType: "ml-form", // Custom type for ML form button
+    mlFormId: "r90qdu", // ML form ID
+    status: {
+      text: "FREE",
+      bgColor: "bg-green-500"
+    }
   },
   {
-    title: "Coaching Programme",
-    description: "Personalized coaching to help you grow and scale your business.",
-    image: "/coaching.jpg",
-    link: "/coaching"
+    id: 'pro-group',
+    title: "PRO Group",
+    description: "Join an exclusive community of ambitious education entrepreneurs. Get direct access to proven strategies, peer support, and expert guidance to scale your business.",
+    buttonText: "Apply Now",
+    imageUrl: "/pro-group.png",
+    imageAlt: "PRO Group Community",
+    link: "/pro-group", // Internal link
+    status: {
+      text: "NEW",
+      bgColor: "bg-blue-500"
+    }
   },
   {
-    title: "Automate & AI",
-    description: "We help build automations and AI for you to streamline your operations.",
-    image: "/automate-ai.jpg",
-    link: "/automate-ai"
+    id: 'one-on-one',
+    title: "1-on-1 Coaching",
+    description: "Get personalized guidance and tailored strategies to overcome your specific challenges. Accelerate your growth with dedicated mentorship sessions.",
+    buttonText: "Book a Call",
+    imageUrl: "/coaching.png",
+    imageAlt: "One on One Coaching Session",
+    link: "/coaching", // Internal link
+    status: {
+      text: "LIMITED",
+      bgColor: "bg-purple-500"
+    }
   },
 ];
+
+// Helper function to render the appropriate button
+const renderButton = (service) => {
+  if (service.buttonType === "ml-form") {
+    return `<button 
+      class="ml-onclick-form w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors" 
+      onclick="ml('show', '${service.mlFormId}', true)"
+    >
+      ${service.buttonText}
+    </button>`;
+  }
+  
+  return `<a 
+    href="${service.link}"
+    target="${service.link?.startsWith('/') ? '_self' : '_blank'}"
+    rel="${!service.link?.startsWith('/') ? 'noopener noreferrer' : ''}"
+    class="inline-block w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors text-center"
+  >
+    ${service.buttonText}
+  </a>`;
+}
 ---
 
-<div class="py-16">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    How we help you 
-  </h2>
-
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-    {services.map(service => (
-      <div class="text-left">
-        <a href={service.link} class="block">
-          <img src={service.image} alt={service.title} class="w-full h-48 object-cover mb-4" />
-        </a>
-        <a href={service.link} class="block">
-          <h3 class="text-xl font-bold mb-2">{service.title}</h3>
-        </a>
-        <p class="text-gray-600 mb-4">{service.description}</p>
-        <a href={service.link} class="inline-block bg-black text-white py-2 px-4 rounded hover:bg-gray-800">Learn More</a>
+{services.map((service, index) => (
+  <section class="container mx-auto px-4 py-8 md:py-16" key={service.id}>
+    <div class={`border rounded-lg p-4 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 ${
+      index % 2 === 1 ? 'md:flex-row-reverse' : ''
+    }`}>
+      <!-- Image -->
+      <div class="w-full md:flex-1">
+        <img 
+          src={service.imageUrl}
+          alt={service.imageAlt}
+          class="w-full h-auto rounded-lg shadow-lg"
+          loading="lazy"
+        />
       </div>
-    ))}
-  </div>
-</div>
+      <!-- Content section -->
+      <div class="w-full md:flex-1 space-y-4 md:space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
+            {service.title}
+          </h2>
+          <span class={`${service.status.bgColor} text-white px-3 py-1 rounded-full text-sm font-semibold w-fit`}>
+            {service.status.text}
+          </span>
+        </div>
+        <p class="text-base md:text-lg text-gray-600">
+          {service.description}
+        </p>
+        <Fragment set:html={renderButton(service)} />
+      </div>
+    </div>
+  </section>
+))}
+
+<style>
+  section {
+    background-color: #ffffff;
+  }
+</style>

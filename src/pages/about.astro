@@ -14,20 +14,61 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">About us</Fragment>
+      <Fragment slot="desc">Helping Tutors Build Profitable Education Businesses</Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+    <div class="flex flex-col gap-6 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Your Success Is Our Mission
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p>
+      
+      <div class="text-lg leading-relaxed text-slate-500 space-y-6">
+        <p>
+          Word from Haris, Founder of EduGrow
+        </p>
+
+        <p>
+          Hey there! As an educator who's built a 7-figure education business, I've seen firsthand the 
+          challenges that tutors face. Through countless conversations with fellow educators, I've noticed 
+          a common thread: brilliant teachers struggling to turn their expertise into profitable businesses.
+        </p>
+
+        <p>
+          Here's the thing - I love making money, and I'm good at it. But more importantly, I love 
+          helping other educators succeed. I've cracked the code on building a profitable education 
+          business, and now I'm here to share everything I know.
+        </p>
+
+        <h3 class="font-semibold text-2xl text-gray-800 mt-8">Why I Do This</h3>
+        <p>
+          Too many talented educators are:
+          <ul class="list-disc pl-6 mt-2">
+            <li>Working too many hours for too little return</li>
+            <li>Struggling to attract and retain students</li>
+            <li>Missing out on the income they deserve</li>
+            <li>Feeling overwhelmed by the business side of tutoring</li>
+          </ul>
+        </p>
+
+        <p>
+          I believe that great educators deserve great rewards. My mission is to help you build a 
+          thriving tutoring business that gives you both the income and the impact you're looking for. 
+          No more choosing between making money and making a difference - you can do both.
+        </p>
+
+        <p>
+          Let me show you how to transform your teaching expertise into a profitable business that 
+          serves your students while serving you. Because when educators prosper, everyone wins.
+        </p>
+
+        <p>
+          From, Haris
+        </p>
+      </div>
     </div>
+
+    {/* Team section remains the same */}
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
