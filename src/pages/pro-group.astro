@@ -4,9 +4,10 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Accordion from "@components/accordion.astro";
 import Testimonials from "@components/testimonials.astro";
+import { Icon } from "astro-icon/components";
 
 const leader = {
-    name: "Haris Samingan",
+  name: "Haris Samingan",
   credentials: [
     "ex-Google Developer Expert",
     "Scaled previous education business from 6 to 7 figures",
@@ -19,36 +20,98 @@ const leader = {
   image: {
     src: "/haris.jpg",
     alt: "Haris Samingan - Education Business Growth Specialist",
-    fallback: "/haris.jpg"
-  }
+    fallback: "/haris.jpg",
+  },
 };
 
 const groupOffer = {
   title: "Pro Group",
-  description: "Join a selective community of tutors and education business owners committed to scaling their impact and income.",
+  description:
+    "Join a selective community of tutors and education business owners committed to scaling their impact and income.",
 };
 
 const painPoints = [
   {
     title: "Struggling to grow your student base?",
-    description: "You're providing great results but can't seem to attract enough students or retain them consistently.",
-    icon: "sad"
+    description:
+      "You're providing great results but can't seem to attract enough students or retain them consistently.",
+    icon: "lucide:frown",
   },
   {
     title: "Overwhelmed by business operations?",
-    description: "Managing schedules, marketing, and admin work is taking time away from what you do best - teaching.",
-    icon: "sad"
+    description:
+      "Managing schedules, marketing, and admin work is taking time away from what you do best - teaching.",
+    icon: "lucide:frown",
   },
   {
     title: "Finding it hard to scale?",
-    description: "You've reached capacity as a solo tutor but don't know how to expand without sacrificing quality.",
-    icon: "sad"
-  }
+    description:
+      "You've reached capacity as a solo tutor but don't know how to expand without sacrificing quality.",
+    icon: "lucide:frown",
+  },
+];
+
+const businessConcepts = [
+  {
+    title: "Student Acquisition",
+    description:
+      "Master digital marketing, referral systems, and enrollment strategies to consistently attract quality students.",
+    icon: "lucide:user-plus",
+  },
+  {
+    title: "Curriculum Design",
+    description:
+      "Create scalable, results-driven curriculum frameworks that maintain quality across multiple teachers.",
+    icon: "lucide:book-open",
+  },
+  {
+    title: "Pricing Strategy",
+    description:
+      "Develop optimal pricing models that reflect your value while maximizing profitability.",
+    icon: "lucide:dollar-sign",
+  },
+  {
+    title: "Operations Management",
+    description:
+      "Implement systems for scheduling, attendance tracking, and resource management.",
+    icon: "lucide:settings",
+  },
+  {
+    title: "Hiring A+ Team",
+    description:
+      "Recruit, train, and retain quality teachers while building a positive team culture.",
+    icon: "lucide:users",
+  },
+  {
+    title: "Student Experience",
+    description:
+      "Design memorable learning experiences that drive results and encourage long-term retention.",
+    icon: "lucide:star",
+  },
+  {
+    title: "Business Analytics",
+    description:
+      "Track key metrics and use data to make informed decisions about your education business.",
+    icon: "lucide:bar-chart",
+  },
+  {
+    title: "Tech Integration",
+    description:
+      "Leverage educational technology to enhance learning outcomes and operational efficiency.",
+    icon: "lucide:monitor",
+  },
+  {
+    title: "Growth Strategy",
+    description:
+      "Plan and execute sustainable growth through multiple revenue streams and expansion models.",
+    icon: "lucide:trending-up",
+  },
 ];
 
 const framework = {
   title: "Monthly Programme Structure",
-  description: "We've found that having dedicated focused working time leads to better implementation and faster progress.",
+  description:
+    "We've found that having dedicated focused working time leads to better implementation and faster progress.",
   weeks: [
     {
       week: "Week 1",
@@ -57,9 +120,9 @@ const framework = {
         "Deep dive into the month's focus topic",
         "Expert-led training session",
         "Actionable homework assignment",
-        "Clear implementation guidelines"
+        "Clear implementation guidelines",
       ],
-      icon: "presentation"
+      icon: "lucide:presentation",
     },
     {
       week: "Week 2",
@@ -68,9 +131,9 @@ const framework = {
         "Address implementation challenges",
         "Group problem-solving session",
         "Dedicated working time with guidance",
-        "Peer accountability check-ins"
+        "Peer accountability check-ins",
       ],
-      icon: "work"
+      icon: "lucide:pencil",
     },
     {
       week: "Week 3",
@@ -79,9 +142,9 @@ const framework = {
         "Members present their progress",
         "Share success stories and learnings",
         "Group feedback and improvements",
-        "Strategy refinement"
+        "Strategy refinement",
       ],
-      icon: "showcase"
+      icon: "lucide:projector",
     },
     {
       week: "Week 4",
@@ -90,54 +153,61 @@ const framework = {
         "Final questions for the month",
         "Structured implementation time",
         "Progress review",
-        "Next month preparation"
+        "Next month preparation",
       ],
-      icon: "work"
-    }
-  ]
+      icon: "lucide:pencil",
+    },
+  ],
 };
 
 const eligibilityCriteria = [
   {
     title: "Active tutoring business",
-    description: "Currently running a tutoring practice or education business with at least 5 active students",
-    icon: "briefcase"
+    description:
+      "Currently running a tutoring practice or education business with at least 5 active students",
+    icon: "lucide:briefcase",
   },
   {
     title: "Commitment to growth",
-    description: "Ready to invest time in bi-weekly group sessions and implementation work",
-    icon: "calendar"
+    description:
+      "Ready to invest time in bi-weekly group sessions and implementation work",
+    icon: "lucide:calendar",
   },
   {
     title: "Collaborative mindset",
-    description: "Willing to share experiences and support fellow education entrepreneurs",
-    icon: "check"
-  }
+    description:
+      "Willing to share experiences and support fellow education entrepreneurs",
+    icon: "lucide:check-circle",
+  },
 ];
 
 const faq = [
   {
     question: "How is this different from other business groups?",
-    answer: "Our pro group is specifically designed for tutors and education business owners. We focus on education-specific challenges, strategies, and growth opportunities."
+    answer:
+      "Our pro group is specifically designed for tutors and education business owners. We focus on education-specific challenges, strategies, and growth opportunities.",
   },
   {
     question: "What's included in the membership?",
-    answer: "Members get access to bi-weekly mastermind sessions, our resource library, peer networking opportunities, and exclusive training on education business growth."
+    answer:
+      "Members get access to bi-weekly mastermind sessions, our resource library, peer networking opportunities, and exclusive training on education business growth.",
   },
   {
     question: "How many members are in the group?",
-    answer: "We maintain a small group size of maximum 15 members to ensure quality interactions and personalized attention."
+    answer:
+      "We maintain a small group size of maximum 15 members to ensure quality interactions and personalized attention.",
   },
   {
     question: "What's the time commitment?",
-    answer: "Members should commit to attending bi-weekly 90-minute sessions and implementing the strategies discussed."
+    answer:
+      "Members should commit to attending bi-weekly 90-minute sessions and implementing the strategies discussed.",
   },
   {
     question: "How long is the membership term?",
-    answer: "Initial membership is for 6 months, with the option to continue based on mutual fit and progress."
-  }
+    answer:
+      "Initial membership is for 6 months, with the option to continue based on mutual fit and progress.",
+  },
 ];
-
 ---
 
 <Layout title="Pro Group">
@@ -152,72 +222,90 @@ const faq = [
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-6">Are You...</h2>
         <div class="space-y-6">
-          {painPoints.map((point) => (
-            <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 flex-shrink-0">
-                {point.icon === "sad" && (
-                  <svg class="w-full h-full text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke-width="2" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 16s-1.5-2-4-2-4 2-4 2" />
-                    <line x1="9" y1="9" x2="9.01" y2="9" stroke-width="3" stroke-linecap="round" />
-                    <line x1="15" y1="9" x2="15.01" y2="9" stroke-width="3" stroke-linecap="round" />
-                  </svg>
-                )}
+          {
+            painPoints.map((point) => (
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 flex-shrink-0">
+                  <Icon name={point.icon} class="w-full h-full text-blue-500" />
+                </div>
+                <div>
+                  <h3 class="font-medium mb-2">{point.title}</h3>
+                  <p class="text-gray-600">{point.description}</p>
+                </div>
               </div>
-              <div>
-                <h3 class="font-medium mb-2">{point.title}</h3>
-                <p class="text-gray-600">{point.description}</p>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Business Concepts Section -->
+      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">
+          We can help and join the #1 Education Business Group
+        </h2>
+        <p class="text-gray-600 mb-8">
+          We'll cover a wide range of topics to help you grow your business.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {
+            businessConcepts.map((concept) => (
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 flex-shrink-0">
+                    <Icon
+                      name={concept.icon}
+                      class="w-full h-full text-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <h3 class="font-medium text-lg mb-2">{concept.title}</h3>
+                    <p class="text-gray-600 text-sm">{concept.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </section>
 
       <section class="mb-12 bg-gray-50 p-8 rounded-lg">
         <h2 class="text-2xl font-semibold mb-4">{framework.title}</h2>
         <p class="text-gray-600 mb-8">{framework.description}</p>
-        
+
         <div class="grid md:grid-cols-2 gap-6">
-          {framework.weeks.map((week) => (
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-              <div class="flex items-start space-x-4">
-                <div class="w-8 h-8 flex-shrink-0">
-                  {week.icon === "presentation" && (
-                    <svg class="w-full h-full text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12H4z"/>
-                    </svg>
-                  )}
-                  {week.icon === "work" && (
-                    <svg class="w-full h-full text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                  )}
-                  {week.icon === "showcase" && (
-                    <svg class="w-full h-full text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                    </svg>
-                  )}
-                </div>
-                <div class="flex-1">
-                  <h3 class="font-bold text-lg mb-2">{week.week}</h3>
-                  <h4 class="font-medium text-blue-600 mb-3">{week.title}</h4>
-                  <ul class="space-y-2">
-                    {week.activities.map((activity) => (
-                      <li class="flex items-start space-x-2 text-sm text-gray-600">
-                        <svg class="w-4 h-4 mt-1 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        <span>{activity}</span>
-                      </li>
-                    ))}
-                  </ul>
+          {
+            framework.weeks.map((week) => (
+              <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex items-start space-x-4">
+                  <div class="w-8 h-8 flex-shrink-0">
+                    <Icon
+                      name={`${week.icon}`}
+                      class="w-full h-full text-blue-500"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-lg mb-2">{week.week}</h3>
+                    <h4 class="font-medium text-blue-600 mb-3">{week.title}</h4>
+                    <ul class="space-y-2">
+                      {week.activities.map((activity) => (
+                        <li class="flex items-start space-x-2 text-sm text-gray-600">
+                          <Icon
+                            name="lucide:check"
+                            class="w-4 h-4 mt-1 text-green-500 flex-shrink-0"
+                          />
+                          <span>{activity}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </section>
-    
+
       <!-- Group Leader Section -->
       <section class="mb-12 bg-gray-50 p-8 rounded-lg">
         <div class="flex flex-col md:flex-row items-start gap-8">
@@ -225,19 +313,22 @@ const faq = [
             <h2 class="text-2xl font-semibold mb-4">Group Leader</h2>
             <h3 class="text-xl font-medium mb-2">{leader.name}</h3>
             <ul class="space-y-2">
-              {leader.credentials.map(credential => (
-                <li class="flex items-center">
-                  <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  {credential}
-                </li>
-              ))}
+              {
+                leader.credentials.map((credential) => (
+                  <li class="flex items-center">
+                    <Icon
+                      name="lucide:check"
+                      class="w-5 h-5 mr-2 text-green-500"
+                    />
+                    {credential}
+                  </li>
+                ))
+              }
             </ul>
           </div>
           <div class="md:w-1/3 aspect-square rounded-lg overflow-hidden">
-            <img 
-              src={leader.image.src} 
+            <img
+              src={leader.image.src}
               alt={leader.image.alt}
               class="w-full h-full object-cover rounded-lg shadow-lg"
               onerror="this.onerror=null; this.src='{leader.image.fallback}';"
@@ -252,44 +343,31 @@ const faq = [
       <section class="mb-12 bg-gray-50 p-8 rounded-lg">
         <h2 class="text-2xl font-semibold mb-6">Membership Requirements</h2>
         <div class="space-y-6">
-          {eligibilityCriteria.map((criteria) => (
-            <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 flex-shrink-0">
-                {criteria.icon === "calendar" && (
-                  <svg class="w-full h-full text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
-                    <line x1="16" y1="2" x2="16" y2="6" stroke-width="2"/>
-                    <line x1="8" y1="2" x2="8" y2="6" stroke-width="2"/>
-                    <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"/>
-                  </svg>
-                )}
-                {criteria.icon === "briefcase" && (
-                  <svg class="w-full h-full text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke-width="2"/>
-                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke-width="2"/>
-                  </svg>
-                )}
-                {criteria.icon === "check" && (
-                  <svg class="w-full h-full text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                )}
+          {
+            eligibilityCriteria.map((criteria) => (
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 flex-shrink-0">
+                  <Icon
+                    name={criteria.icon}
+                    class="w-full h-full text-green-500"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-medium mb-2">{criteria.title}</h3>
+                  <p class="text-gray-600">{criteria.description}</p>
+                </div>
               </div>
-              <div>
-                <h3 class="font-medium mb-2">{criteria.title}</h3>
-                <p class="text-gray-600">{criteria.description}</p>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         <div class="mt-8 text-center">
-            <button 
-              disabled
-              class="inline-block bg-gray-400 text-white py-3 px-8 rounded-lg cursor-not-allowed">
-              Coming Soon
-            </button>
-          </div>
+          <button
+            disabled
+            class="inline-block bg-gray-400 text-white py-3 px-8 rounded-lg cursor-not-allowed">
+            Coming Soon
+          </button>
+        </div>
       </section>
 
       <!-- FAQ Section -->
