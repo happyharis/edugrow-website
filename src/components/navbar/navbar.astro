@@ -16,90 +16,94 @@ const menuitems = [
     ],
   },
   {
-    title: "What We Do",
-    path: "#",
-    children: [
-      { title: "PRO Group", path: "/pro-group" },
-      // { title: "1-on-1 Coaching", path: "/coaching" },
-    ],
+    title: "Pro Group",
+    path: "/pro-group",
+    badge: true,
   },
   {
     title: "About",
     path: "/about",
   },
 ];
+
+// Calculate days remaining until Feb 29, 2024
+const endDate = new Date("2025-02-29T23:59:59");
+const now = new Date();
+const diffTime = endDate.getTime() - now.getTime();
+const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 ---
 
-<Container>
-  <header
-    class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-    <div
-      class="flex flex-col lg:flex-row justify-between items-center py-3 px-4 max-w-7xl mx-auto">
-      <Astronav>
-        <div class="flex w-full lg:w-auto items-center justify-between">
-          <a href="/" class="text-lg"
-            ><span class="font-bold text-slate-800">Edu</span><span
-              class="text-slate-500">Grow</span
-            >
-          </a>
-          <div class="block lg:hidden">
-            <MenuIcon class="w-4 h-4 text-gray-800" />
-          </div>
-        </div>
-        <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-          <ul class="flex flex-col lg:flex-row lg:gap-3">
-            {
-              menuitems.map((item, index) => (
-                <>
-                  {item.children && (
-                    <Dropdown
-                      title={item.title}
-                      children={item.children}
-                      lastItem={index === menuitems.length - 1}
-                    />
-                  )}
+<div
+  class="fixed top-0 left-0 right-0 z-50 bg-black text-white py-2 text-center font-medium">
+  <Container>
+    <div class="flex items-center justify-center space-x-2">
+      <span class="text-yellow-400 text-base">🎁</span>
+      <span class="text-xs sm:text-base"
+        >FREE PRO Group Trial (Worth $400). Only {daysLeft} days left</span
+      >
+      <a
+        href="/pro-group"
+        class="ml-2 text-xs sm:text-sm bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition-colors">
+        Learn More →
+      </a>
+    </div>
+  </Container>
+</div>
 
-                  {!item.children && (
-                    <li>
-                      <a
-                        href={item.path}
-                        target={
-                          item.path.startsWith("http") ? "_blank" : "_self"
-                        }
-                        rel={
-                          item.path.startsWith("http")
-                            ? "noopener noreferrer"
-                            : ""
-                        }
-                        class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
-                        <span> {item.title}</span>
-                        {item.badge && (
-                          <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                            New
-                          </span>
-                        )}
-                      </a>
-                    </li>
-                  )}
-                </>
-              ))
-            }
-          </ul>
-          <div class="lg:hidden flex items-center mt-3 gap-4">
-            <Link href="#" size="md" block>Free Course</Link>
-          </div>
-        </MenuItems>
-      </Astronav>
-      <div>
-        <div class="hidden lg:flex items-center gap-4">
-          <Link
-            href="#"
-            class="ml-onclick-form"
-            onclick="ml('show', 'r90qdu', true)">Free Course</Link
+<header
+  class="fixed top-[40px] left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <div
+    class="flex flex-col lg:flex-row justify-between items-center py-3 px-4 max-w-7xl mx-auto">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="text-lg"
+          ><span class="font-bold text-slate-800">Edu</span><span
+            class="text-slate-500">Grow</span
           >
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
         </div>
       </div>
-    </div>
-  </header>
-  <div class="h-[72px]"></div>
-</Container>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      target={item.path.startsWith("http") ? "_blank" : "_self"}
+                      rel={
+                        item.path.startsWith("http")
+                          ? "noopener noreferrer"
+                          : ""
+                      }
+                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      <span> {item.title}</span>
+                      {item.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                          New
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+      </MenuItems>
+    </Astronav>
+  </div>
+</header>
+<div class="h-[112px]"></div>

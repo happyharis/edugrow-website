@@ -160,54 +160,106 @@ const framework = {
   ],
 };
 
-const eligibilityCriteria = [
+const faq = [
   {
-    title: "Active tutoring business",
-    description:
-      "Currently running a tutoring practice or education business with at least 5 active students",
-    icon: "lucide:briefcase",
+    question: "How does the membership work?",
+    answer:
+      "With your membership, you get access to our exclusive community group, weekly coaching calls, implementation guides, automation systems, and endless support from peers and mentors. You'll also get access to our resource library containing templates, scripts, and guides to help scale your education business.",
   },
   {
-    title: "Commitment to growth",
-    description:
-      "Ready to invest time in bi-weekly group sessions and implementation work",
-    icon: "lucide:calendar",
+    question: "What if I'm unhappy with the results?",
+    answer:
+      "We don't think this will happen, but if it does, you can cancel your membership at any time. There's no obligation to continue if the group isn't what you expected it to be. We want to ensure you're getting value from your investment.",
   },
   {
-    title: "Collaborative mindset",
-    description:
-      "Willing to share experiences and support fellow education entrepreneurs",
-    icon: "lucide:check-circle",
+    question: "When do the calls happen?",
+    answer:
+      "Pro Group calls happen weekly on Zoom, typically every Wednesday at 10am Singapore Time. All calls are recorded and made available in our resource library, so you won't miss anything even if you can't attend live. We also host implementation sessions and special workshops throughout the month.",
+  },
+  {
+    question: "How do I know that the membership is right for me?",
+    answer:
+      "If you're an education business owner or tutor who is serious about scaling your impact and income, this is the place for you. Our members include tutors, enrichment center owners, online course creators, and education consultants from all over Singapore and Asia. If you have any questions about the Pro membership, email us at support@edugrow.org.",
+  },
+  {
+    question: "What is your refund policy?",
+    answer: `By policy, we don't accept refund requests on the sale of digital goods unless it's stated clearly on a published sales page. Here's why: Digital products are much different than physical goods. By returning a physical good to a seller, the merchant gets to keep the original value of that product. With digital goods, a return is a total and complete loss to the merchant, especially once the content has been "consumed."
+
+We understand that members may sometimes miss the opportunity to cancel their membership before the renewal date due to unforeseen circumstances. To address this, we offer a 48-hour grace period for members to request a refund if they wish to cancel their membership. Please send our support team a message at support@edugrow.org.
+
+Our program is centered around growing education businesses and implementing systems, both of which are undoubtedly difficult and complex to accomplish. It's our mission to make the complex simple. But the hard work still must be done. Once you learn how, the execution is in your hands.
+
+Rest assured: we obsess over the quality of our learning material and we test everything with beta users first to make sure that the content works. The testimonials speak for themselves!
+
+So instead of requesting a refund, we invite you to ask questions. Participate actively in the weekly calls and implementation sessions. Engage with the community. Get the information you need to attain the goals you want. This will help us make the program better and improve the resources we provide.`,
   },
 ];
 
-const faq = [
-  {
-    question: "How is this different from other business groups?",
-    answer:
-      "Our pro group is specifically designed for tutors and education business owners. We focus on education-specific challenges, strategies, and growth opportunities.",
-  },
-  {
-    question: "What's included in the membership?",
-    answer:
-      "Members get access to bi-weekly mastermind sessions, our resource library, peer networking opportunities, and exclusive training on education business growth.",
-  },
-  {
-    question: "How many members are in the group?",
-    answer:
-      "We maintain a small group size of maximum 15 members to ensure quality interactions and personalized attention.",
-  },
-  {
-    question: "What's the time commitment?",
-    answer:
-      "Members should commit to attending bi-weekly 90-minute sessions and implementing the strategies discussed.",
-  },
-  {
-    question: "How long is the membership term?",
-    answer:
-      "Initial membership is for 6 months, with the option to continue based on mutual fit and progress.",
-  },
-];
+const earlyAdopterPackage = {
+  title: "Early Adopter Package",
+  subtitle: "6 Months Pro Group Membership",
+  regularPrice: 5450,
+  discountedPrice: 600,
+  priceLabel: "Limited Time Offer",
+  deliveryNote:
+    "All systems and workflows will be delivered on March 1st, 2024",
+  features: [
+    {
+      name: "Weekly Group Coaching Sessions",
+      worth: 800,
+      icon: "lucide:check",
+    },
+    {
+      name: "FREE 1-on-1 Strategy Session",
+      worth: 200,
+      icon: "lucide:check",
+    },
+    {
+      name: "10+ Copy & Paste Automated Workflows",
+      worth: 1000,
+      icon: "lucide:check",
+    },
+    {
+      name: "WhatsApp Invoice Automation System",
+      worth: 150,
+      icon: "lucide:check",
+    },
+    {
+      name: "Airtable Education Management System",
+      worth: 1000,
+      icon: "lucide:check",
+    },
+    {
+      name: "Beta Access to EduGrow LMS",
+      worth: 2000,
+      icon: "lucide:check",
+    },
+    {
+      name: "Sales Scripts & Contracts Templates",
+      worth: 300,
+      icon: "lucide:check",
+    },
+    {
+      name: "BONUS: A⭐️ Teacher Hiring Guide",
+      isBonus: true,
+      icon: "lucide:gift",
+    },
+    {
+      name: "BONUS: No BS Teaching Guide",
+      isBonus: true,
+      icon: "lucide:gift",
+    },
+    {
+      name: "BONUS: 7-Figure Education Business Guide",
+      isBonus: true,
+      icon: "lucide:gift",
+    },
+    {
+      name: "24/7 Access to Ask Questions",
+      icon: "lucide:check",
+    },
+  ],
+};
 ---
 
 <Layout title="Pro Group">
@@ -217,7 +269,23 @@ const faq = [
       <Fragment slot="desc">{groupOffer.description}</Fragment>
     </Sectionhead>
 
-    <main class="mt-16">
+    <main class="mt-[140px] sm:mt-16">
+      <!-- Video Section -->
+      <section class="mb-16 text-center">
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="relative pt-[56.25%] bg-gray-100 rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              title="EduGrow Pro Group Introduction"
+              class="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
       <!-- Pain Points Section -->
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-6">Are You...</h2>
@@ -269,43 +337,6 @@ const faq = [
         </div>
       </section>
 
-      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
-        <h2 class="text-2xl font-semibold mb-4">{framework.title}</h2>
-        <p class="text-gray-600 mb-8">{framework.description}</p>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          {
-            framework.weeks.map((week) => (
-              <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="flex items-start space-x-4">
-                  <div class="w-8 h-8 flex-shrink-0">
-                    <Icon
-                      name={`${week.icon}`}
-                      class="w-full h-full text-blue-500"
-                    />
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="font-bold text-lg mb-2">{week.week}</h3>
-                    <h4 class="font-medium text-blue-600 mb-3">{week.title}</h4>
-                    <ul class="space-y-2">
-                      {week.activities.map((activity) => (
-                        <li class="flex items-start space-x-2 text-sm text-gray-600">
-                          <Icon
-                            name="lucide:check"
-                            class="w-4 h-4 mt-1 text-green-500 flex-shrink-0"
-                          />
-                          <span>{activity}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </section>
-
       <!-- Group Leader Section -->
       <section class="mb-12 bg-gray-50 p-8 rounded-lg">
         <div class="flex flex-col md:flex-row items-start gap-8">
@@ -339,40 +370,108 @@ const faq = [
 
       <Testimonials />
 
-      <!-- Eligibility Section -->
-      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
-        <h2 class="text-2xl font-semibold mb-6">Membership Requirements</h2>
-        <div class="space-y-6">
-          {
-            eligibilityCriteria.map((criteria) => (
-              <div class="flex items-start space-x-4">
-                <div class="w-8 h-8 flex-shrink-0">
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">Choose Your Plan</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Free Trial -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2">Free Trial</h3>
+                <p class="text-gray-600">Try before you commit</p>
+                <p class="text-lg font-semibold mt-4">$0</p>
+                <p class="text-red-500 text-sm mt-2">Ends February 29, 2024</p>
+              </div>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
                   <Icon
-                    name={criteria.icon}
-                    class="w-full h-full text-green-500"
+                    name="lucide:check"
+                    class="w-5 h-5 text-green-500 mr-3"
                   />
-                </div>
-                <div>
-                  <h3 class="font-medium mb-2">{criteria.title}</h3>
-                  <p class="text-gray-600">{criteria.description}</p>
+                  <span>4 Group Coaching Sessions</span>
+                </li>
+              </ul>
+
+              <div class="text-center">
+                <a
+                  href="/contact"
+                  class="inline-block px-8 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                  Join Free Trial
+                </a>
+              </div>
+            </div>
+
+            <!-- Early Adopter Package -->
+            <div
+              class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative">
+              <div
+                class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl-lg">
+                Best Value
+              </div>
+
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2">
+                  {earlyAdopterPackage.title}
+                </h3>
+                <p class="text-gray-600">{earlyAdopterPackage.subtitle}</p>
+                <div class="mt-4">
+                  <p class="text-gray-400 line-through">
+                    ${earlyAdopterPackage.regularPrice}
+                  </p>
+                  <p class="text-2xl font-bold text-blue-600">
+                    ${earlyAdopterPackage.discountedPrice}
+                  </p>
+                  <p class="text-sm text-gray-600">
+                    {earlyAdopterPackage.priceLabel}
+                  </p>
                 </div>
               </div>
-            ))
-          }
-        </div>
 
-        <div class="mt-8 text-center">
-          <button
-            disabled
-            class="inline-block bg-gray-400 text-white py-3 px-8 rounded-lg cursor-not-allowed">
-            Coming Soon
-          </button>
+              <ul class="space-y-4 mb-8">
+                {
+                  earlyAdopterPackage.features.map((feature) => (
+                    <li
+                      class={`flex items-center ${feature.isBonus ? "font-medium text-blue-600" : ""}`}>
+                      <Icon
+                        name={feature.icon}
+                        class={`w-5 h-5 mr-3 ${feature.isBonus ? "text-blue-500" : "text-green-500"}`}
+                      />
+                      <span>{feature.name}</span>
+                      {feature.worth && (
+                        <span class="ml-2 text-sm text-gray-500">
+                          (worth ${feature.worth})
+                        </span>
+                      )}
+                    </li>
+                  ))
+                }
+              </ul>
+
+              <!-- Add delivery note -->
+              <div class="text-center mb-6">
+                <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                  <Icon name="lucide:info" class="w-4 h-4 inline-block mr-1" />
+                  {earlyAdopterPackage.deliveryNote}
+                </p>
+              </div>
+
+              <div class="text-center">
+                <a
+                  href="/pro-group-us1"
+                  class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  Join Early Adopters
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- FAQ Section -->
-      <section class="mt-16">
-        <h2 class="text-2xl mb-4 font-semibold">Frequently Asked Questions</h2>
+      <section class="mt-16 mb-12">
+        <h2 class="text-2xl font-semibold mb-8">Frequently Asked Questions</h2>
         <Accordion items={faq} />
       </section>
     </main>
