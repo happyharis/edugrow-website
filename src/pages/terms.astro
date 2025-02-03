@@ -1,203 +1,208 @@
 ---
-import BlankLayout from "@layouts/BlankLayout.astro";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
 ---
 
-<BlankLayout title="Terms Of Use">
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-8">Terms Of Use</h1>
+<Layout title="Terms Of Use">
+  <Container>
+    <main class="max-w-4xl mx-auto py-12">
+      <h1 class="text-4xl font-bold mb-8">Terms Of Use</h1>
 
-    <div class="prose max-w-none">
-      <p class="mb-6">Last updated: {new Date().toLocaleDateString()}</p>
+      <div class="prose max-w-none">
+        <p class="mb-6">Last updated: {new Date().toLocaleDateString()}</p>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">What is EduGrow?</h2>
-        <p>
-          EduGrow, a subsidiary of Haris Ventures Pte. Ltd., a Singapore private
-          limited company, (hereinafter "EduGrow" or "We/Us/Our") provides
-          services, products and information via our website (located at
-          https://edugrow.org), our social media channels, and other platforms
-          which may be added or removed at any time. Collectively, these sites
-          are referred to as the "Platform(s)" and include all versions
-          accessible through all devices (such as mobile and desktop apps, web
-          browsers, etc.)
-        </p>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">What is EduGrow?</h2>
+          <p>
+            EduGrow, a subsidiary of Haris Ventures Pte. Ltd., a Singapore
+            private limited company, (hereinafter "EduGrow" or "We/Us/Our")
+            provides services, products and information via our website (located
+            at https://edugrow.org), our social media channels, and other
+            platforms which may be added or removed at any time. Collectively,
+            these sites are referred to as the "Platform(s)" and include all
+            versions accessible through all devices (such as mobile and desktop
+            apps, web browsers, etc.)
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">
-          All Users Agree to Our Terms & Conditions
-        </h2>
-        <p>
-          All visitors (hereinafter, "User(s)", "You" or "Your") to our
-          Platforms are subject to the terms, conditions and notices set forth
-          in these Terms and Conditions (the "Terms & Conditions"). Purchasers
-          of Our products or subscribers to Our services may be subject to
-          additional rules applicable to such transactions. These Terms &
-          Conditions may be amended from time-to-time.
-        </p>
-        <p class="mt-4">
-          By using Our Platforms, purchasing Our products (physical and/or
-          digital) or subscribing to Our services, You accept these Terms &
-          Conditions and agree to comply with all of its provisions.
-        </p>
-        <p class="mt-4 font-semibold">
-          If You do not wish to accept these Terms & Conditions, DO NOT USE OUR
-          PLATFORMS, PURCHASE OUR PRODUCTS OR SUBSCRIBE TO OUR SERVICES.
-        </p>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">
+            All Users Agree to Our Terms & Conditions
+          </h2>
+          <p>
+            All visitors (hereinafter, "User(s)", "You" or "Your") to our
+            Platforms are subject to the terms, conditions and notices set forth
+            in these Terms and Conditions (the "Terms & Conditions"). Purchasers
+            of Our products or subscribers to Our services may be subject to
+            additional rules applicable to such transactions. These Terms &
+            Conditions may be amended from time-to-time.
+          </p>
+          <p class="mt-4">
+            By using Our Platforms, purchasing Our products (physical and/or
+            digital) or subscribing to Our services, You accept these Terms &
+            Conditions and agree to comply with all of its provisions.
+          </p>
+          <p class="mt-4 font-semibold">
+            If You do not wish to accept these Terms & Conditions, DO NOT USE
+            OUR PLATFORMS, PURCHASE OUR PRODUCTS OR SUBSCRIBE TO OUR SERVICES.
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">
-          All Users Agree to Our Privacy Policy
-        </h2>
-        <p>
-          You agree to the terms of our Privacy Policy set forth at
-          https://edugrow.org/privacy and as may be amended from time-to-time.
-        </p>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">
+            All Users Agree to Our Privacy Policy
+          </h2>
+          <p>
+            You agree to the terms of our Privacy Policy set forth at
+            https://edugrow.org/privacy and as may be amended from time-to-time.
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Purchases and Subscriptions</h2>
-        <p>
-          We provide products in the form of digital products, access and
-          subscriptions to courses, course materials, and private online
-          communities. Collectively, we refer to our products, services,
-          courses, and subscriptions as "Our Products."
-        </p>
-        <p class="mt-4">
-          All purchasers of any of Our Products agree to the following payment
-          terms:
-        </p>
-        <ul class="list-disc ml-6 mt-2 mb-4">
-          <li>
-            You warrant that you are authorized to use any payment method you
-            provide to us.
-          </li>
-          <li>
-            We use third-party vendors to process payments for Our Products,
-            including Stripe and PayNow. Visit their respective websites to view
-            their specific privacy policies and terms.
-          </li>
-          <li>
-            Our Products that are sold and distributed in a digital format are
-            non-refundable, including any subscriptions for courses or
-            memberships in any discussion groups or other online communities.
-          </li>
-          <li>
-            We reserve the right to change the costs of our Products at any
-            time. Please check our Platforms for the latest pricing.
-          </li>
-        </ul>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">
+            Purchases and Subscriptions
+          </h2>
+          <p>
+            We provide products in the form of digital products, access and
+            subscriptions to courses, course materials, and private online
+            communities. Collectively, we refer to our products, services,
+            courses, and subscriptions as "Our Products."
+          </p>
+          <p class="mt-4">
+            All purchasers of any of Our Products agree to the following payment
+            terms:
+          </p>
+          <ul class="list-disc ml-6 mt-2 mb-4">
+            <li>
+              You warrant that you are authorized to use any payment method you
+              provide to us.
+            </li>
+            <li>
+              We use third-party vendors to process payments for Our Products,
+              including Stripe and PayNow. Visit their respective websites to
+              view their specific privacy policies and terms.
+            </li>
+            <li>
+              Our Products that are sold and distributed in a digital format are
+              non-refundable, including any subscriptions for courses or
+              memberships in any discussion groups or other online communities.
+            </li>
+            <li>
+              We reserve the right to change the costs of our Products at any
+              time. Please check our Platforms for the latest pricing.
+            </li>
+          </ul>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">
-          Participation in Group Coaching
-        </h2>
-        <p>
-          Any advice, guidance, or recommendations provided during events or
-          group coaching sessions are for informational purposes only and are
-          based on personal experience. We do not provide professional legal,
-          financial, or business advice. Users are encouraged to consult with
-          qualified professionals before making decisions.
-        </p>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">
+            Participation in Group Coaching
+          </h2>
+          <p>
+            Any advice, guidance, or recommendations provided during events or
+            group coaching sessions are for informational purposes only and are
+            based on personal experience. We do not provide professional legal,
+            financial, or business advice. Users are encouraged to consult with
+            qualified professionals before making decisions.
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Conduct of Users</h2>
-        <p>
-          Users of Our Platforms understand and agree that Our Platforms may
-          only be used for lawful purposes and in accordance with these Terms &
-          Conditions.
-        </p>
-        <p class="mt-4">
-          Users represent that You are of legal age and capable of forming a
-          binding contract with Us. These Terms & Conditions are a binding
-          contract.
-        </p>
-        <h3 class="text-xl font-semibold mt-6 mb-3">Prohibited Conduct</h3>
-        <p>
-          Users of Our Platforms understand and agree that You will not engage
-          in any of the following conduct:
-        </p>
-        <ul class="list-disc ml-6 mt-2 mb-4">
-          <li>Violate any Singapore laws or regulations</li>
-          <li>
-            Collect personal data about other Users or solicit personal
-            information
-          </li>
-          <li>Impersonate any person or entity</li>
-          <li>
-            Submit spam, chain letters, or promote unauthorized commercial
-            activities
-          </li>
-          <li>
-            Disrupt or interfere with the security or use of our Platforms
-          </li>
-          <li>Attempt to gain unauthorized access to any User's account</li>
-        </ul>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">Conduct of Users</h2>
+          <p>
+            Users of Our Platforms understand and agree that Our Platforms may
+            only be used for lawful purposes and in accordance with these Terms
+            & Conditions.
+          </p>
+          <p class="mt-4">
+            Users represent that You are of legal age and capable of forming a
+            binding contract with Us. These Terms & Conditions are a binding
+            contract.
+          </p>
+          <h3 class="text-xl font-semibold mt-6 mb-3">Prohibited Conduct</h3>
+          <p>
+            Users of Our Platforms understand and agree that You will not engage
+            in any of the following conduct:
+          </p>
+          <ul class="list-disc ml-6 mt-2 mb-4">
+            <li>Violate any Singapore laws or regulations</li>
+            <li>
+              Collect personal data about other Users or solicit personal
+              information
+            </li>
+            <li>Impersonate any person or entity</li>
+            <li>
+              Submit spam, chain letters, or promote unauthorized commercial
+              activities
+            </li>
+            <li>
+              Disrupt or interfere with the security or use of our Platforms
+            </li>
+            <li>Attempt to gain unauthorized access to any User's account</li>
+          </ul>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">
-          Intellectual Property Rights
-        </h2>
-        <p>
-          Our Platforms and all content appearing in Our Platforms including
-          text, images, software code, course materials, videos, and the design,
-          layout, functionality and features of Our Platforms (collectively,
-          "Our Materials") are owned by Us or Our licensors.
-        </p>
-        <p class="mt-4">
-          Our Materials are protected under Singapore copyright laws and
-          international treaties. We reserve all rights to Our Materials.
-        </p>
-        <p class="mt-4">
-          You are permitted to use Our Platforms solely for the non-commercial
-          uses described in connection with our products and services. No
-          license to Our Materials is granted except as specifically permitted
-          as part of a paid transaction.
-        </p>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">
+            Intellectual Property Rights
+          </h2>
+          <p>
+            Our Platforms and all content appearing in Our Platforms including
+            text, images, software code, course materials, videos, and the
+            design, layout, functionality and features of Our Platforms
+            (collectively, "Our Materials") are owned by Us or Our licensors.
+          </p>
+          <p class="mt-4">
+            Our Materials are protected under Singapore copyright laws and
+            international treaties. We reserve all rights to Our Materials.
+          </p>
+          <p class="mt-4">
+            You are permitted to use Our Platforms solely for the non-commercial
+            uses described in connection with our products and services. No
+            license to Our Materials is granted except as specifically permitted
+            as part of a paid transaction.
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Limitation of Liability</h2>
-        <p>
-          To the maximum extent permitted by Singapore law, we shall not be
-          liable for any indirect, incidental, special, consequential, or
-          punitive damages, or any loss of profits or revenues, whether incurred
-          directly or indirectly, or any loss of data, use, goodwill, or other
-          intangible losses resulting from:
-        </p>
-        <ul class="list-disc ml-6 mt-2 mb-4">
-          <li>Your use or inability to use our Platforms or Services</li>
-          <li>Any unauthorized access to or use of our servers</li>
-          <li>
-            Any content obtained from the Platforms or through our Services
-          </li>
-          <li>
-            Any implementation of business strategies or decisions made based on
-            our Services
-          </li>
-        </ul>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by Singapore law, we shall not be
+            liable for any indirect, incidental, special, consequential, or
+            punitive damages, or any loss of profits or revenues, whether
+            incurred directly or indirectly, or any loss of data, use, goodwill,
+            or other intangible losses resulting from:
+          </p>
+          <ul class="list-disc ml-6 mt-2 mb-4">
+            <li>Your use or inability to use our Platforms or Services</li>
+            <li>Any unauthorized access to or use of our servers</li>
+            <li>
+              Any content obtained from the Platforms or through our Services
+            </li>
+            <li>
+              Any implementation of business strategies or decisions made based
+              on our Services
+            </li>
+          </ul>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Governing Law</h2>
-        <p>
-          These Terms shall be governed by and construed in accordance with the
-          laws of Singapore. Any dispute arising out of or in connection with
-          these Terms, including any question regarding its existence, validity,
-          or termination, shall be referred to and finally resolved by the
-          Singapore courts.
-        </p>
-      </section>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">Governing Law</h2>
+          <p>
+            These Terms shall be governed by and construed in accordance with
+            the laws of Singapore. Any dispute arising out of or in connection
+            with these Terms, including any question regarding its existence,
+            validity, or termination, shall be referred to and finally resolved
+            by the Singapore courts.
+          </p>
+        </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-        <p>For questions about these Terms of Service, please contact:</p>
-        <p>Email: support@edugrow.org</p>
-      </section>
-    </div>
-  </main>
-</BlankLayout>
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+          <p>For questions about these Terms of Service, please contact:</p>
+          <p>Email: support@edugrow.org</p>
+        </section>
+      </div>
+    </main>
+  </Container>
+</Layout>
