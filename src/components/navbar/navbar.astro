@@ -36,17 +36,18 @@ const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 <div
   class="fixed top-0 left-0 right-0 z-50 bg-black text-white py-2 text-center font-medium">
   <Container>
-    <div class="flex items-center justify-center space-x-2">
-      <span class="text-yellow-400 text-base">🎁</span>
-      <span class="text-xs sm:text-base"
-        >FREE PRO Group Trial (Worth $400). Only {daysLeft} days left</span
-      >
-      <a
-        href="/pro-group"
-        class="ml-2 text-xs sm:text-sm bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition-colors">
-        Learn More →
-      </a>
-    </div>
+    <a href="/pro-group" class="block group">
+      <div class="flex items-center justify-center space-x-2">
+        <span class="text-yellow-400 text-base">🎁</span>
+        <span class="text-xs sm:text-base"
+          >FREE PRO Group Trial (Worth $400). Only {daysLeft} days left</span
+        >
+        <span
+          class="ml-2 text-xs sm:text-sm bg-white/10 group-hover:bg-white/20 px-3 py-1 rounded-full transition-colors">
+          Learn More →
+        </span>
+      </div>
+    </a>
   </Container>
 </div>
 
