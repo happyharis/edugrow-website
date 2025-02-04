@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Accordion from "@components/accordion.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Accordion from "@components/accordion.astro";
 import Testimonials from "@components/testimonials.astro";
+import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
 const leader = {
@@ -58,6 +58,7 @@ const businessConcepts = [
       "Master digital marketing, referral systems, and enrollment strategies to consistently attract quality students.",
     icon: "lucide:user-plus",
   },
+
   {
     title: "Curriculum Design",
     description:
@@ -155,6 +156,11 @@ const earlyAdopterPackage = {
     {
       name: "Weekly Group Coaching Sessions",
       worth: 2400,
+      icon: "lucide:check",
+    },
+    {
+      name: "Exclusive PRO Group",
+      worth: 1000,
       icon: "lucide:check",
     },
     {
@@ -330,37 +336,54 @@ const earlyAdopterPackage = {
 
           <div class="space-y-6 text-gray-700">
             <p class="leading-relaxed">
-              Either thay are at the starter stage or scaler stage
+              There are 3 stages tutors and educators face:
             </p>
 
-            <div class="mt-12">
-              <img
-                src="/graph.png"
-                alt="Education Business Growth Stages: Starter ($0-$200k) to Scaler ($200k-$1M)"
-                class="w-full h-auto mb-8"
-              />
+            <img
+              src="/growth-graph.png"
+              alt="Growth stages graph"
+              class="w-full my-6"
+            />
 
-              <div class="grid md:grid-cols-2 gap-8">
+            <div class="mt-12">
+              <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                  <h3 class="text-xl font-semibold mb-3">Starter Stage</h3>
+                  <h3 class="text-xl font-semibold mb-3">Foundation Stage</h3>
                   <p class="text-gray-600 mb-4">
-                    Solo tutor focused is facing unpredictable number of
-                    students & relying on referalls that are inconsistent
+                    You are not consistently getting students and heavily
+                    dependent on unreliable referrals. Getting consistent
+                    students seems challenging without a clear path forward.
                   </p>
                   <div class="text-sm text-gray-500">
-                    Revenue: $0 - $400,000
+                    Revenue: $0 - $200,000
                   </div>
+                  <div class="text-sm text-gray-500">Team Size: Solo</div>
                 </div>
 
                 <div>
-                  <h3 class="text-xl font-semibold mb-3">Scaler Stage</h3>
+                  <h3 class="text-xl font-semibold mb-3">Growth Stage</h3>
                   <p class="text-gray-600 mb-4">
-                    Focus on hiring, creating processes and systems to scale
-                    beyond yourself
+                    You have consistent student flow but experiencing burnout
+                    from handling teaching, admin, and support alone. Scaling
+                    beyond one person presents challenges.
                   </p>
                   <div class="text-sm text-gray-500">
-                    Revenue: $200,000 - $1,000,000+
+                    Revenue: $200,000 - $500,000
                   </div>
+                  <div class="text-sm text-gray-500">Team Size: 1-3 people</div>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold mb-3">Expansion Stage</h3>
+                  <p class="text-gray-600 mb-4">
+                    You successfully hired team (admin, tutors) but still
+                    teaching classes. Feels pressured to remain as the face of
+                    business. Growth potential limited by teaching commitments.
+                  </p>
+                  <div class="text-sm text-gray-500">
+                    Revenue: $500,000 - $1,000,000+
+                  </div>
+                  <div class="text-sm text-gray-500">Team Size: 4+ people</div>
                 </div>
               </div>
             </div>
@@ -438,12 +461,9 @@ const earlyAdopterPackage = {
 
           <div class="grid md:grid-cols-2 gap-8">
             <!-- Free Trial -->
-            <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="bg-white rounded-lg shadow-lg p-8 order-2 md:order-1">
               <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold mb-2">Free Trial</h3>
-                <p class="text-gray-600">Try before you commit</p>
-                <p class="text-lg font-semibold mt-4">$0</p>
-                <p class="text-red-500 text-sm mt-2">Ends February 29, 2024</p>
               </div>
 
               <ul class="space-y-4 mb-8">
@@ -464,10 +484,11 @@ const earlyAdopterPackage = {
                 </a>
               </div>
             </div>
+            <!-- Free Trial -->
 
             <!-- Early Adopter Package -->
             <div
-              class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative">
+              class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative order-1 md:order-2">
               <div
                 class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl-lg">
                 Best Value
@@ -478,17 +499,6 @@ const earlyAdopterPackage = {
                   {earlyAdopterPackage.title}
                 </h3>
                 <p class="text-gray-600">{earlyAdopterPackage.subtitle}</p>
-                <div class="mt-4">
-                  <p class="text-gray-400 line-through">
-                    ${earlyAdopterPackage.regularPrice}
-                  </p>
-                  <p class="text-2xl font-bold text-blue-600">
-                    ${earlyAdopterPackage.discountedPrice}
-                  </p>
-                  <p class="text-sm text-gray-600">
-                    {earlyAdopterPackage.priceLabel}
-                  </p>
-                </div>
               </div>
 
               <ul class="space-y-4 mb-8">
@@ -519,14 +529,37 @@ const earlyAdopterPackage = {
                 </p>
               </div>
 
+              <!-- Add price comparison -->
+              <div class="text-center mb-6 space-y-1">
+                <p class="text-gray-400 line-through text-sm">
+                  Value Price: $5,450
+                </p>
+                <p class="text-gray-500 line-through">Regular Price: $2,400</p>
+                <p class="text-2xl font-bold text-blue-600">Early Bird: $600</p>
+                <p class="text-sm text-blue-500">Save $1,800 (75% off)</p>
+              </div>
+
               <div class="text-center">
                 <a
-                  href="/pro-group-us1"
+                  href="https://edugrow.circle.so/checkout/early-adopter-package?coupon_code=EARLYADOPTER"
                   class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                   Join Early Adopters
                 </a>
               </div>
             </div>
+            <!-- Early Adopter Package -->
+          </div>
+
+          <!-- Add note about price increase -->
+          <div class="text-center mt-8 text-sm text-gray-600">
+            <p class="inline-flex items-center gap-2">
+              <Icon name="lucide:alert-circle" class="w-4 h-4 text-red-500" />
+              <span
+                >Note: This is the only time we're offering the Early Adopter
+                Package at this price. After this, prices will increase
+                permanently.</span
+              >
+            </p>
           </div>
         </div>
       </section>
