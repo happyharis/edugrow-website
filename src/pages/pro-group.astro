@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Accordion from "@components/accordion.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Accordion from "@components/accordion.astro";
 import Testimonials from "@components/testimonials.astro";
+import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
 const leader = {
@@ -55,11 +55,12 @@ const businessConcepts = [
   {
     title: "Student Acquisition",
     description:
-      "Master digital marketing, referral systems, and enrollment strategies to consistently attract quality students.",
+      "Learn digital marketing, referral systems, and enrollment strategies to consistently attract students.",
     icon: "lucide:user-plus",
   },
+
   {
-    title: "Curriculum Design",
+    title: "Curriculum Design with AI",
     description:
       "Create scalable, results-driven curriculum frameworks that maintain quality across multiple teachers.",
     icon: "lucide:book-open",
@@ -95,9 +96,9 @@ const businessConcepts = [
     icon: "lucide:bar-chart",
   },
   {
-    title: "Tech Integration",
+    title: "AI + Tech Integration",
     description:
-      "Leverage educational technology to enhance learning outcomes and operational efficiency.",
+      "Leverage educational technology & AI to enhance learning outcomes and operational efficiency.",
     icon: "lucide:monitor",
   },
   {
@@ -108,106 +109,125 @@ const businessConcepts = [
   },
 ];
 
-const framework = {
-  title: "Monthly Programme Structure",
-  description:
-    "We've found that having dedicated focused working time leads to better implementation and faster progress.",
-  weeks: [
-    {
-      week: "Week 1",
-      title: "Topic Introduction & Strategy",
-      activities: [
-        "Deep dive into the month's focus topic",
-        "Expert-led training session",
-        "Actionable homework assignment",
-        "Clear implementation guidelines",
-      ],
-      icon: "lucide:presentation",
-    },
-    {
-      week: "Week 2",
-      title: "Q&A & Focused Working",
-      activities: [
-        "Address implementation challenges",
-        "Group problem-solving session",
-        "Dedicated working time with guidance",
-        "Peer accountability check-ins",
-      ],
-      icon: "lucide:pencil",
-    },
-    {
-      week: "Week 3",
-      title: "Implementation Showcase",
-      activities: [
-        "Members present their progress",
-        "Share success stories and learnings",
-        "Group feedback and improvements",
-        "Strategy refinement",
-      ],
-      icon: "lucide:projector",
-    },
-    {
-      week: "Week 4",
-      title: "Q&A & Focused Working",
-      activities: [
-        "Final questions for the month",
-        "Structured implementation time",
-        "Progress review",
-        "Next month preparation",
-      ],
-      icon: "lucide:pencil",
-    },
-  ],
-};
-
-const eligibilityCriteria = [
-  {
-    title: "Active tutoring business",
-    description:
-      "Currently running a tutoring practice or education business with at least 5 active students",
-    icon: "lucide:briefcase",
-  },
-  {
-    title: "Commitment to growth",
-    description:
-      "Ready to invest time in bi-weekly group sessions and implementation work",
-    icon: "lucide:calendar",
-  },
-  {
-    title: "Collaborative mindset",
-    description:
-      "Willing to share experiences and support fellow education entrepreneurs",
-    icon: "lucide:check-circle",
-  },
-];
-
 const faq = [
   {
-    question: "How is this different from other business groups?",
+    question: "How does the membership work?",
     answer:
-      "Our pro group is specifically designed for tutors and education business owners. We focus on education-specific challenges, strategies, and growth opportunities.",
+      "With your membership, you get access to our exclusive community group, weekly coaching calls, implementation guides, automation systems, and endless support from peers and mentors. You'll also get access to our resource library containing templates, scripts, and guides to help scale your education business.",
   },
   {
-    question: "What's included in the membership?",
+    question: "What if I'm unhappy with the results?",
     answer:
-      "Members get access to bi-weekly mastermind sessions, our resource library, peer networking opportunities, and exclusive training on education business growth.",
+      "We don't think this will happen, but if it does, you can cancel your membership at any time. There's no obligation to continue if the group isn't what you expected it to be. We want to ensure you're getting value from your investment.",
   },
   {
-    question: "How many members are in the group?",
+    question: "When do the calls happen?",
     answer:
-      "We maintain a small group size of maximum 15 members to ensure quality interactions and personalized attention.",
+      "Pro Group calls happen weekly on Zoom, typically every Wednesday at 10am Singapore Time. All calls are recorded and made available in our resource library, so you won't miss anything even if you can't attend live. We also host implementation sessions and special workshops throughout the month.",
   },
   {
-    question: "What's the time commitment?",
+    question: "How do I know that the membership is right for me?",
     answer:
-      "Members should commit to attending bi-weekly 90-minute sessions and implementing the strategies discussed.",
+      "If you're an education business owner or tutor who is serious about scaling your impact and income, this is the place for you. Our members include tutors, enrichment center owners, online course creators, and education consultants from all over Singapore and Asia. If you have any questions about the Pro membership, email us at support@edugrow.org.",
   },
   {
-    question: "How long is the membership term?",
-    answer:
-      "Initial membership is for 6 months, with the option to continue based on mutual fit and progress.",
+    question: "What is your refund policy?",
+    answer: `By policy, we don't accept refund requests on the sale of digital goods unless it's stated clearly on a published sales page. Here's why: Digital products are much different than physical goods. By returning a physical good to a seller, the merchant gets to keep the original value of that product. With digital goods, a return is a total and complete loss to the merchant, especially once the content has been "consumed."
+
+We understand that members may sometimes miss the opportunity to cancel their membership before the renewal date due to unforeseen circumstances. To address this, we offer a 48-hour grace period for members to request a refund if they wish to cancel their membership. Please send our support team a message at support@edugrow.org.
+
+Our program is centered around growing education businesses and implementing systems, both of which are undoubtedly difficult and complex to accomplish. It's our mission to make the complex simple. But the hard work still must be done. Once you learn how, the execution is in your hands.
+
+Rest assured: we obsess over the quality of our learning material and we test everything with beta users first to make sure that the content works. The testimonials speak for themselves!
+
+So instead of requesting a refund, we invite you to ask questions. Participate actively in the weekly calls and implementation sessions. Engage with the community. Get the information you need to attain the goals you want. This will help us make the program better and improve the resources we provide.`,
   },
 ];
+
+const earlyAdopterPackage = {
+  title: "Early Adopter Package",
+  subtitle: "6 Months Pro Group Membership",
+  regularPrice: 2400,
+  discountedPrice: 600,
+  priceLabel: "Limited Time Offer",
+  deliveryNote:
+    "All guides, templates, systems and workflows will be delivered on March 4th, 2025",
+  features: [
+    {
+      name: "Everything in Free Trial",
+      icon: "lucide:check",
+    },
+    {
+      name: "Weekly Group Coaching Sessions",
+      worth: 2400,
+      icon: "lucide:check",
+    },
+    {
+      name: "PRO Private Facebook & WhatsApp Group",
+      worth: 500,
+      icon: "lucide:check",
+    },
+    {
+      name: "FREE 1-on-1 Strategy Session",
+      worth: 200,
+      icon: "lucide:check",
+    },
+    {
+      name: "WhatsApp Invoice Automation Workflow",
+      worth: 150,
+      icon: "lucide:check",
+    },
+    {
+      name: "10 Copy & Paste Automated Workflows",
+      worth: 1000,
+      icon: "lucide:check",
+    },
+    {
+      name: "Airtable Education Management System",
+      worth: 750,
+      icon: "lucide:check",
+    },
+    {
+      name: "Airtable Hiring System",
+      worth: 500,
+      icon: "lucide:check",
+    },
+    {
+      name: "Job Description & Contracts Templates",
+      worth: 300,
+      icon: "lucide:check",
+    },
+    {
+      name: "24/7 Access to Ask Questions",
+      icon: "lucide:check",
+    },
+    {
+      name: "Future Access to Events & Software",
+      icon: "lucide:check",
+    },
+    {
+      name: "BONUS: A+ Teacher Hiring Guide",
+      isBonus: true,
+      icon: "lucide:gift",
+    },
+    {
+      name: "BONUS: No BS Teaching Guide",
+      isBonus: true,
+      icon: "lucide:gift",
+    },
+    {
+      name: "BONUS: How to Achieve 7-Figure Education Business Guide",
+      isBonus: true,
+      icon: "lucide:gift",
+    },
+  ],
+  get valuePrice() {
+    return this.features.reduce(
+      (total, feature) => total + (feature.worth || 0),
+      0,
+    );
+  },
+};
 ---
 
 <Layout title="Pro Group">
@@ -217,7 +237,7 @@ const faq = [
       <Fragment slot="desc">{groupOffer.description}</Fragment>
     </Sectionhead>
 
-    <main class="mt-16">
+    <main class="mt-[140px] sm:mt-8">
       <!-- Pain Points Section -->
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-6">Are You...</h2>
@@ -238,13 +258,224 @@ const faq = [
         </div>
       </section>
 
+      <!-- Story Section -->
+      <section
+        class="mb-12 bg-gradient-to-br from-blue-50 to-white p-8 rounded-lg">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-semibold mb-6">"I've been there..."</h2>
+
+          <div class="space-y-6 text-gray-700">
+            <img
+              src="/haris-classroom.png"
+              alt="Haris teaching in classroom"
+              class="mx-auto mb-6 object-cover"
+            />
+            <p class="leading-relaxed">
+              I started my education business journey as a freelance coding &
+              tech instructor (or tutor), teaching just a handful of students.
+              Like many of you, I was passionate about teaching but struggled
+              with the business side of things: hiring, marketing, and
+              operations.
+            </p>
+
+            <div class="flex items-start space-x-3">
+              <Icon
+                name="lucide:arrow-right"
+                class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0"
+              />
+              <p>
+                <span class="font-medium">The Early Days:</span> I worked long hours,
+                handled everything myself, and barely made enough to justify the
+                time investment. I knew there had to be a better way.
+              </p>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <Icon
+                name="lucide:arrow-right"
+                class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0"
+              />
+              <p>
+                <span class="font-medium">The Turning Point:</span> Everything changed
+                when I started implementing systems and automations. I went from
+                the only teacher, teaching 5x per week, to managing a team of teachers
+                & tutors, and focusing on scaling my business, which I really enjoy.
+              </p>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <Icon
+                name="lucide:arrow-right"
+                class="w-5 h-5 text-blue-500 mt-1 flex-shrink-0"
+              />
+              <p>
+                <span class="font-medium">The Result:</span> Within 12 months, my
+                previous education business scaled to 7 figures in revenue, built
+                a team of 10+ teachers, and most importantly, impacted hundreds of
+                students' lives.
+              </p>
+            </div>
+
+            <p class="leading-relaxed mt-6">
+              But, I quit my previous education business because I wanted to do
+              my own thing. Therefore, I then find something that I could help:
+              tuition and education business owners
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Discovery & Growth Stages Section -->
+      <section class="mb-12 bg-white p-8 rounded-lg border border-gray-100">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-semibold mb-6">
+            "After talking to multiple tutors and educators, I noticed a
+            pattern..."
+          </h2>
+
+          <div class="space-y-6 text-gray-700">
+            <p class="leading-relaxed">
+              There are 3 stages tutors and educators face:
+            </p>
+
+            <img
+              src="/growth-graph.png"
+              alt="Growth stages graph"
+              class="w-full my-6"
+            />
+
+            <div class="mt-12">
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h3 class="text-xl font-semibold mb-3">Foundation Stage</h3>
+                  <p class="text-gray-600 mb-4">
+                    You are not consistently getting students and heavily
+                    dependent on unreliable referrals. Getting consistent
+                    students seems challenging without a clear path forward.
+                  </p>
+                  <div class="text-sm text-gray-500">
+                    Revenue: $0 - $200,000
+                  </div>
+                  <div class="text-sm text-gray-500">Team Size: Solo</div>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold mb-3">Growth Stage</h3>
+                  <p class="text-gray-600 mb-4">
+                    You have consistent student flow but experiencing burnout
+                    from handling teaching, admin, and support alone. Scaling
+                    beyond one person presents challenges.
+                  </p>
+                  <div class="text-sm text-gray-500">
+                    Revenue: $200,000 - $500,000
+                  </div>
+                  <div class="text-sm text-gray-500">Team Size: 1-3 people</div>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold mb-3">Expansion Stage</h3>
+                  <p class="text-gray-600 mb-4">
+                    You successfully hired team (admin, tutors) but still
+                    teaching classes. Feels pressured to remain as the face of
+                    business. Growth potential limited by teaching commitments.
+                  </p>
+                  <div class="text-sm text-gray-500">
+                    Revenue: $500,000 - $1,000,000+
+                  </div>
+                  <div class="text-sm text-gray-500">Team Size: 4+ people</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solution Section -->
+      <section class="mb-12 bg-white p-8 rounded-lg border border-gray-100">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-semibold mb-6">
+            The Hard Truth: Ads don't grow your business, systems do
+          </h2>
+
+          <p class="text-gray-700 mb-8 leading-relaxed">
+            Let me be honest with you: The methods that helped you earn your
+            first $100,000 won't help you earn $1 million.
+
+            <br /><br />
+
+            Many people think spending more money on advertisements or trying
+            every new marketing trick is the answer. They're wrong. Working
+            until you're completely tired won't help either.
+
+            <br /><br />
+
+            As the famous author James Clear says: "You don't achieve your goals
+            just by setting them. You achieve what your daily habits allow."
+
+            <br /><br />
+
+            Here's what most people don't tell you about growing an education
+            business:
+
+            <br /><br />
+
+            When you're just starting out, you need good systems to turn random
+            student recommendations into regular enrollments. You need proper
+            marketing and sales methods that bring in new students regularly -
+            without you having to work extra hard all the time.
+
+            <br /><br />
+
+            When your business starts growing, you need systems that help you
+            work smarter. This means creating standard ways to handle new
+            students and teach lessons. Because you can't grow bigger if
+            everything depends on you alone.
+
+            <br /><br />
+
+            And when you're ready to expand? You need strong systems that keep
+            your teaching quality high even when you're not teaching. This means
+            having clear training guides, ways to measure quality, and methods
+            to track how well things are going.
+
+            <br /><br />
+
+            The EduGrow PRO group isn't about quick solutions that only work for
+            a while. We help you build strong systems that turn your education
+            business from a tiring job into something that can grow bigger
+            without you working harder.
+
+            <br /><br />
+
+            We've made mistakes before. We've learned important lessons. Now,
+            we're here to help you build these important systems without wasting
+            years figuring things out on your own.
+
+            <br /><br />
+
+            Because here's the truth: Working IN your business keeps you busy.
+            But working ON your business - through systematic, measurable
+            improvements - makes you successful.
+
+            <br /><br />
+
+            Are you ready to stop letting your business control your life and
+            start controlling it instead?
+          </p>
+          <button
+            class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            onclick="document.querySelector('section.py-12.bg-gray-50').scrollIntoView({behavior: 'smooth'})">
+            I'm Ready To Grow to 7 Figures!
+          </button>
+        </div>
+      </section>
+
       <!-- Business Concepts Section -->
       <section class="mb-12 bg-gray-50 p-8 rounded-lg">
-        <h2 class="text-2xl font-semibold mb-4">
-          We can help and join the #1 Education Business Group
-        </h2>
+        <h2 class="text-2xl font-semibold mb-4">What You'll Learn</h2>
         <p class="text-gray-600 mb-8">
-          We'll cover a wide range of topics to help you grow your business.
+          Here's a preview of what we are gonna cover. Content and schedule may
+          vary based on group needs and market changes.
         </p>
 
         <div class="grid md:grid-cols-3 gap-6">
@@ -269,40 +500,52 @@ const faq = [
         </div>
       </section>
 
-      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
-        <h2 class="text-2xl font-semibold mb-4">{framework.title}</h2>
-        <p class="text-gray-600 mb-8">{framework.description}</p>
+      <!-- Weekly Schedule-->
+      <section class="mb-12 bg-white p-8 rounded-lg border border-gray-100">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-semibold mb-6">Weekly Session Schedule</h2>
 
-        <div class="grid md:grid-cols-2 gap-6">
-          {
-            framework.weeks.map((week) => (
-              <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="flex items-start space-x-4">
-                  <div class="w-8 h-8 flex-shrink-0">
-                    <Icon
-                      name={`${week.icon}`}
-                      class="w-full h-full text-blue-500"
-                    />
-                  </div>
-                  <div class="flex-1">
-                    <h3 class="font-bold text-lg mb-2">{week.week}</h3>
-                    <h4 class="font-medium text-blue-600 mb-3">{week.title}</h4>
-                    <ul class="space-y-2">
-                      {week.activities.map((activity) => (
-                        <li class="flex items-start space-x-2 text-sm text-gray-600">
-                          <Icon
-                            name="lucide:check"
-                            class="w-4 h-4 mt-1 text-green-500 flex-shrink-0"
-                          />
-                          <span>{activity}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-10 h-10 flex-shrink-0 bg-blue-50 rounded-lg flex items-center justify-center">
+                <Icon name="lucide:calendar" class="w-6 h-6 text-blue-500" />
               </div>
-            ))
-          }
+              <div>
+                <h3 class="font-medium text-lg">
+                  Every Tuesday (Starting March 4th, 2025)
+                </h3>
+                <p class="text-gray-600">
+                  10:00 AM - 12:00 PM (Singapore Time)
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-10 h-10 flex-shrink-0 bg-blue-50 rounded-lg flex items-center justify-center">
+                <Icon name="lucide:video" class="w-6 h-6 text-blue-500" />
+              </div>
+              <div>
+                <h3 class="font-medium text-lg">Online Sessions</h3>
+                <p class="text-gray-600">Join from anywhere via Zoom</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-10 h-10 flex-shrink-0 bg-blue-50 rounded-lg flex items-center justify-center">
+                <Icon name="lucide:play" class="w-6 h-6 text-blue-500" />
+              </div>
+              <div>
+                <h3 class="font-medium text-lg">Session Recordings</h3>
+                <p class="text-gray-600">
+                  Can't make it? All sessions are recorded and available for
+                  replay
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -339,40 +582,169 @@ const faq = [
 
       <Testimonials />
 
-      <!-- Eligibility Section -->
-      <section class="mb-12 bg-gray-50 p-8 rounded-lg">
-        <h2 class="text-2xl font-semibold mb-6">Membership Requirements</h2>
-        <div class="space-y-6">
-          {
-            eligibilityCriteria.map((criteria) => (
-              <div class="flex items-start space-x-4">
-                <div class="w-8 h-8 flex-shrink-0">
-                  <Icon
-                    name={criteria.icon}
-                    class="w-full h-full text-green-500"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-medium mb-2">{criteria.title}</h3>
-                  <p class="text-gray-600">{criteria.description}</p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">Choose Your Plan</h2>
 
-        <div class="mt-8 text-center">
-          <button
-            disabled
-            class="inline-block bg-gray-400 text-white py-3 px-8 rounded-lg cursor-not-allowed">
-            Coming Soon
-          </button>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Free Trial -->
+            <div class="bg-white rounded-lg shadow-lg p-8 order-2 md:order-1">
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2">Free Trial</h3>
+              </div>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <Icon
+                    name="lucide:check"
+                    class="w-5 h-5 text-green-500 mr-3"
+                  />
+                  <span>4 Group Coaching Sessions (March 2025):</span>
+                </li>
+                <li class="flex items-start space-x-3 ml-8">
+                  <Icon
+                    name="lucide:calendar"
+                    class="w-4 h-4 text-gray-400 mt-1"
+                  />
+                  <div class="text-sm text-gray-600">
+                    <div>
+                      March 4th, 2025 - How to create your unique selling point
+                      as an educator
+                    </div>
+                    <div>
+                      March 11th, 2025 - Create viral social media to market
+                      your lessons
+                    </div>
+                    <div>
+                      March 18th, 2025 - How to hire & attract A+ teachers
+                    </div>
+                    <div>
+                      March 25th, 2025 - How to achieve 7 figures education
+                      business
+                    </div>
+                  </div>
+                </li>
+                <li class="flex items-center">
+                  <Icon
+                    name="lucide:check"
+                    class="w-5 h-5 text-green-500 mr-3"
+                  />
+                  <span>Access to Facebook Community</span>
+                </li>
+              </ul>
+
+              <div class="text-center">
+                <a
+                  href="https://edu8.org/free-trial-pro-feb-2025"
+                  class="inline-block px-8 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                  Join Free Trial
+                </a>
+              </div>
+            </div>
+            <!-- Free Trial -->
+
+            <!-- Early Adopter Package -->
+            <div
+              class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative order-1 md:order-2">
+              <div
+                class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl-lg">
+                Best Value
+              </div>
+
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2">
+                  {earlyAdopterPackage.title}
+                </h3>
+                <p class="text-gray-600">{earlyAdopterPackage.subtitle}</p>
+                <p class="text-sm text-red-500 mt-2">
+                  <Icon name="lucide:clock" class="w-4 h-4 inline-block mr-1" />
+                  Offer ends February 29th, 2025
+                </p>
+              </div>
+
+              <ul class="space-y-4 mb-8">
+                {
+                  earlyAdopterPackage.features.map((feature) => (
+                    <li
+                      class={`flex items-center ${feature.isBonus ? "font-medium text-blue-600" : ""}`}>
+                      <Icon
+                        name={feature.icon}
+                        class={`w-5 h-5 mr-3 ${feature.isBonus ? "text-blue-500" : "text-green-500"}`}
+                      />
+                      <span>{feature.name}</span>
+                      {feature.worth && (
+                        <span class="ml-2 text-sm text-gray-500">
+                          (worth ${feature.worth})
+                        </span>
+                      )}
+                    </li>
+                  ))
+                }
+              </ul>
+
+              <!-- Add delivery note -->
+              <div class="text-center mb-6">
+                <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                  <Icon name="lucide:info" class="w-4 h-4 inline-block mr-1" />
+                  All guides, templates, systems and workflows will be completed
+                  by March 4th, 2025
+                </p>
+                <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-2">
+                  <Icon
+                    name="lucide:calendar"
+                    class="w-4 h-4 inline-block mr-1"
+                  />
+                  Early Adopter PRO Membership is valid until August 31st, 2025
+                </p>
+              </div>
+
+              <!-- Add price comparison -->
+              <div class="text-center mb-6 space-y-1">
+                <p class="text-gray-400 line-through text-sm">
+                  Value Price: ${earlyAdopterPackage.valuePrice}
+                </p>
+                <p class="text-gray-500 line-through">
+                  Regular Price: ${earlyAdopterPackage.regularPrice}
+                </p>
+                <p class="text-2xl font-bold text-blue-600">
+                  Early Bird: ${earlyAdopterPackage.discountedPrice}
+                </p>
+                <p class="text-sm text-blue-500">Save $1,800 (75% off)</p>
+              </div>
+
+              <div class="text-center">
+                <a
+                  href="https://edu8.org/early-adopter-feb-2025 "
+                  class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  Join Early Adopters
+                </a>
+
+                <p class="text-sm text-red-500 mt-2">
+                  <Icon name="lucide:clock" class="w-4 h-4 inline-block mr-1" />
+                  Offer ends February 29th, 2025
+                </p>
+              </div>
+            </div>
+            <!-- Early Adopter Package -->
+          </div>
+
+          <!-- Add note about price increase -->
+          <div class="text-center mt-8 text-sm text-gray-600">
+            <p class="inline-flex items-center gap-2">
+              <Icon name="lucide:alert-circle" class="w-4 h-4 text-red-500" />
+              <span
+                >Note: This is the only time we're offering the Early Adopter
+                Package - 6 Months Pro Group Membership at this price. After
+                this, prices will increase permanently.</span
+              >
+            </p>
+          </div>
         </div>
       </section>
 
       <!-- FAQ Section -->
-      <section class="mt-16">
-        <h2 class="text-2xl mb-4 font-semibold">Frequently Asked Questions</h2>
+      <section class="mt-16 mb-12">
+        <h2 class="text-2xl font-semibold mb-8">Frequently Asked Questions</h2>
         <Accordion items={faq} />
       </section>
     </main>
