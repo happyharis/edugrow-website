@@ -2,7 +2,8 @@
 import Accordion from "@components/accordion.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Testimonials from "@components/testimonials.astro";
+import TestimonialsSnapshot from "@components/testimonials-snapshot.astro";
+
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
@@ -581,7 +582,7 @@ const earlyAdopterPackage = {
         </div>
       </section>
 
-      <Testimonials />
+      <TestimonialsSnapshot id={1} />
 
       <section class="py-12 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
@@ -688,7 +689,7 @@ const earlyAdopterPackage = {
                 <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
                   <Icon name="lucide:info" class="w-4 h-4 inline-block mr-1" />
                   All guides, templates, systems and workflows will be completed
-                  by March 4th, 2025
+                  by end of March, 2025
                 </p>
                 <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-2">
                   <Icon

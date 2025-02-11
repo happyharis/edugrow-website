@@ -2,26 +2,13 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon/components";
-import PopupForm from "@components/PopupForm.astro";
 import Accordion from "@components/accordion.astro";
-
-const options = [
-  { value: "tuition-owner", label: "I am a Tuition Centre Owner" },
-  { value: "enrichment-owner", label: "I am an Enrichment Centre Owner" },
-  {
-    value: "manager",
-    label: "I manage or operate a centre, but don't own one",
-  },
-  { value: "part-time-tutor", label: "I am a part-time tutor" },
-  { value: "full-time-tutor", label: "I am a full-time tutor" },
-  { value: "online-educator", label: "I am an online education professional" },
-];
 
 const faq = [
   {
     question: "How much is the investment?",
     answer:
-      "We'll discuss the full details during our discovery call. The 1-month paid trial is $400, and if accepted, the 1-year coaching programme is $5,000.",
+      "The 1-month trial is $400, and if selected for the full program, the investment is $5,000 for the year. When designing this program, we had two choices: go mass market with a lower price point but deliver generic solutions, or create a premium experience for serious business owners. We chose the latter because it allows us to devote significant resources to your success and provide personalized strategies. While you can find free scaling advice online, our program offers direct, personalized guidance to help you achieve real results. This investment reflects our commitment to going the extra mile and providing you with every possible advantage for scaling your education business.",
   },
   {
     question: "How much time do I need to commit?",
@@ -345,6 +332,4 @@ const faq = [
       </div>
     </div>
   </Container>
-
-  <PopupForm options={options} buttonText="Apply Now" />
 </Layout>
