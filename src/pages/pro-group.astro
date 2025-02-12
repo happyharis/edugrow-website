@@ -19,9 +19,9 @@ const leader = {
   ],
 
   image: {
-    src: "/haris.jpg",
+    src: "/testimonial-photos/haris.jpg",
     alt: "Haris Samingan - Education Business Growth Specialist",
-    fallback: "/haris.jpg",
+    fallback: "/testimonial-photos/haris.jpg",
   },
 };
 
@@ -147,10 +147,10 @@ So instead of requesting a refund, we invite you to ask questions. Participate a
 ];
 
 const earlyAdopterPackage = {
-  title: "Early Adopter Package",
+  title: "Early Adopter PRO",
   subtitle: "6 Months Pro Group Membership",
-  regularPrice: 2400,
-  discountedPrice: 600,
+  regularPrice: "2,400",
+  discountedPrice: "800",
   priceLabel: "Limited Time Offer",
   deliveryNote:
     "All guides, templates, systems and workflows will be delivered on March 4th, 2025",
@@ -175,22 +175,7 @@ const earlyAdopterPackage = {
       icon: "lucide:check",
     },
     {
-      name: "WhatsApp Invoice Automation Workflow",
-      worth: 150,
-      icon: "lucide:check",
-    },
-    {
-      name: "10 Copy & Paste Automated Workflows",
-      worth: 1000,
-      icon: "lucide:check",
-    },
-    {
-      name: "Airtable Education Management System",
-      worth: 750,
-      icon: "lucide:check",
-    },
-    {
-      name: "Airtable Hiring System",
+      name: "Hiring System",
       worth: 500,
       icon: "lucide:check",
     },
@@ -206,6 +191,11 @@ const earlyAdopterPackage = {
     {
       name: "Future Access to Events & Software",
       icon: "lucide:check",
+    },
+    {
+      name: "BONUS: ClassCard Management System",
+      isBonus: true,
+      icon: "lucide:gift",
     },
     {
       name: "BONUS: A+ Teacher Hiring Guide",
@@ -584,163 +574,108 @@ const earlyAdopterPackage = {
 
       <TestimonialsSnapshot id={1} />
 
-      <section class="py-12 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12">Choose Your Plan</h2>
-
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- Free Trial -->
-            <div class="bg-white rounded-lg shadow-lg p-8 order-2 md:order-1">
-              <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold mb-2">Free Trial</h3>
-              </div>
-
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-center">
-                  <Icon
-                    name="lucide:check"
-                    class="w-5 h-5 text-green-500 mr-3"
-                  />
-                  <span>4 Group Coaching Sessions (March 2025):</span>
-                </li>
-                <li class="flex items-start space-x-3 ml-8">
-                  <Icon
-                    name="lucide:calendar"
-                    class="w-4 h-4 text-gray-400 mt-1"
-                  />
-                  <div class="text-sm text-gray-600">
-                    <div>
-                      March 4th, 2025 - How to create your unique selling point
-                      as an educator
-                    </div>
-                    <div>
-                      March 11th, 2025 - Create social media to market your
-                      lessons
-                    </div>
-                    <div>
-                      March 18th, 2025 - How to hire & attract A+ teachers
-                    </div>
-                    <div>
-                      March 25th, 2025 - How to achieve 7 figures education
-                      business
-                    </div>
-                  </div>
-                </li>
-                <li class="flex items-center">
-                  <Icon
-                    name="lucide:check"
-                    class="w-5 h-5 text-green-500 mr-3"
-                  />
-                  <span>Access to Facebook Community</span>
-                </li>
-              </ul>
-
-              <div class="text-center">
-                <a
-                  href="https://edu8.org/free-trial-pro-feb-2025"
-                  class="inline-block px-8 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                  Join Free Trial
-                </a>
-              </div>
-            </div>
-            <!-- Free Trial -->
-
-            <!-- Early Adopter Package -->
+      <section id="pricing" class="py-12">
+        <div class="max-w-3xl mx-auto px-4">
+          <!-- Early Adopter Package -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative">
             <div
-              class="bg-white rounded-lg shadow-lg p-8 border-2 border-blue-500 relative order-1 md:order-2">
-              <div
-                class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl-lg">
-                Best Value
-              </div>
-
-              <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold mb-2">
-                  {earlyAdopterPackage.title}
-                </h3>
-                <p class="text-gray-600">{earlyAdopterPackage.subtitle}</p>
-                <p class="text-sm text-red-500 mt-2">
-                  <Icon name="lucide:clock" class="w-4 h-4 inline-block mr-1" />
-                  Offer ends February 29th, 2025
-                </p>
-              </div>
-
-              <ul class="space-y-4 mb-8">
-                {
-                  earlyAdopterPackage.features.map((feature) => (
-                    <li
-                      class={`flex items-center ${feature.isBonus ? "font-medium text-blue-600" : ""}`}>
-                      <Icon
-                        name={feature.icon}
-                        class={`w-5 h-5 mr-3 ${feature.isBonus ? "text-blue-500" : "text-green-500"}`}
-                      />
-                      <span>{feature.name}</span>
-                      {feature.worth && (
-                        <span class="ml-2 text-sm text-gray-500">
-                          (worth ${feature.worth})
-                        </span>
-                      )}
-                    </li>
-                  ))
-                }
-              </ul>
-
-              <!-- Add delivery note -->
-              <div class="text-center mb-6">
-                <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
-                  <Icon name="lucide:info" class="w-4 h-4 inline-block mr-1" />
-                  All guides, templates, systems and workflows will be completed
-                  by end of March, 2025
-                </p>
-                <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-2">
-                  <Icon
-                    name="lucide:calendar"
-                    class="w-4 h-4 inline-block mr-1"
-                  />
-                  Early Adopter PRO Membership is valid until August 31st, 2025
-                </p>
-              </div>
-
-              <!-- Add price comparison -->
-              <div class="text-center mb-6 space-y-1">
-                <p class="text-gray-400 line-through text-sm">
-                  Value Price: ${earlyAdopterPackage.valuePrice}
-                </p>
-                <p class="text-gray-500 line-through">
-                  Regular Price: ${earlyAdopterPackage.regularPrice}
-                </p>
-                <p class="text-2xl font-bold text-blue-600">
-                  Early Bird: ${earlyAdopterPackage.discountedPrice}
-                </p>
-                <p class="text-sm text-blue-500">Save $1,800 (75% off)</p>
-              </div>
-
-              <div class="text-center">
-                <a
-                  href="https://edu8.org/early-adopter-feb-2025 "
-                  class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                  Join Early Adopters
-                </a>
-
-                <p class="text-sm text-red-500 mt-2">
-                  <Icon name="lucide:clock" class="w-4 h-4 inline-block mr-1" />
-                  Offer ends February 29th, 2025
-                </p>
-              </div>
+              class="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-sm rounded-bl-lg">
+              Best Value
             </div>
-            <!-- Early Adopter Package -->
-          </div>
 
-          <!-- Add note about price increase -->
-          <div class="text-center mt-8 text-sm text-gray-600">
-            <p class="inline-flex items-center gap-2">
-              <Icon name="lucide:alert-circle" class="w-4 h-4 text-red-500" />
-              <span
-                >Note: This is the only time we're offering the Early Adopter
-                Package - 6 Months Pro Group Membership at this price. After
-                this, prices will increase permanently.</span
-              >
-            </p>
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold mb-2">
+                {earlyAdopterPackage.title}
+              </h3>
+              <p class="text-gray-600">{earlyAdopterPackage.subtitle}</p>
+              <p class="text-sm text-red-500 mt-2">
+                <Icon name="lucide:clock" class="w-4 h-4 inline-block mr-1" />
+                Offer ends February 29th, 2025
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              {
+                earlyAdopterPackage.features.map((feature) => (
+                  <li
+                    class={`flex items-center ${feature.isBonus ? "font-medium text-blue-600" : ""}`}>
+                    <Icon
+                      name={feature.icon}
+                      class={`w-5 h-5 mr-3 ${feature.isBonus ? "text-blue-500" : "text-green-500"}`}
+                    />
+                    <span>{feature.name}</span>
+                    {feature.worth && (
+                      <span class="ml-2 text-sm text-gray-500">
+                        (worth ${feature.worth})
+                      </span>
+                    )}
+                  </li>
+                ))
+              }
+            </ul>
+
+            <!-- Add delivery note -->
+            <div class="text-center mb-6">
+              <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                <Icon name="lucide:info" class="w-4 h-4 inline-block mr-1" />
+                All guides, templates, systems and workflows will be completed by
+                end of March, 2025
+              </p>
+              <p class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-2">
+                <Icon
+                  name="lucide:calendar"
+                  class="w-4 h-4 inline-block mr-1"
+                />
+                Early Adopter PRO Membership is valid until August 31st, 2025
+              </p>
+            </div>
+
+            <!-- Add price comparison -->
+            <div class="text-center mb-6 space-y-1">
+              <p class="text-gray-400 line-through text-sm">
+                Value Price: ${earlyAdopterPackage.valuePrice}
+              </p>
+              <p class="text-gray-500 line-through">
+                Regular Price: ${earlyAdopterPackage.regularPrice}
+              </p>
+              <p class="text-2xl font-bold text-blue-600">
+                Early Bird: ${earlyAdopterPackage.discountedPrice}
+              </p>
+              <p class="text-sm text-blue-500">
+                Save ${
+                  Number(earlyAdopterPackage.regularPrice.replace(",", "")) -
+                    Number(earlyAdopterPackage.discountedPrice)
+                }
+                ({
+                  Math.round(
+                    ((Number(
+                      earlyAdopterPackage.regularPrice.replace(",", ""),
+                    ) -
+                      Number(earlyAdopterPackage.discountedPrice)) /
+                      Number(
+                        earlyAdopterPackage.regularPrice.replace(",", ""),
+                      )) *
+                      100,
+                  )
+                }% off)
+              </p>
+            </div>
+
+            <div class="text-center">
+              <a
+                href="https://edu8.org/early-adopter-feb-2025 "
+                class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                Join Early Adopters
+              </a>
+
+              <p class="text-sm text-red-500 mt-2">
+                <Icon name="lucide:clock" class="w-4 h-4 inline-block mr-1" />
+                Offer ends February 29th, 2025
+              </p>
+            </div>
           </div>
+          <!-- Early Adopter Package -->
         </div>
       </section>
 

@@ -31,17 +31,30 @@ const menuitems = [
     ],
   },
   {
+    title: "Services",
+    path: "#",
+    children: [
+      {
+        title: "Pro Group",
+        path: "/pro-group",
+        description: "Join our exclusive education business growth community",
+        badge: true,
+      },
+      {
+        title: "DFY Operations",
+        path: "/dfy-operations",
+        description: "Let us handle your systems and operations",
+        badge: true,
+      },
+    ],
+  },
+  {
     title: "Case Studies",
     path: "/case-studies",
   },
   {
     title: "Blog",
     path: "/blog",
-  },
-  {
-    title: "Pro Group",
-    path: "/pro-group",
-    badge: true,
   },
   {
     title: "2x Revenue",
@@ -65,7 +78,10 @@ const currentPath = Astro.url.pathname;
 <div
   class="fixed top-0 left-0 right-0 z-50 bg-black text-white py-2 text-center font-medium">
   <Container>
-    <a href="/pro-group" class="block group">
+    <a
+      href="https://edu8.org/feb-signup-webinar"
+      target="_blank"
+      class="block group">
       <div class="flex items-center justify-center space-x-2">
         <span class="text-yellow-400 text-base">🤫</span>
         <span class="text-[10px] leading-tight sm:text-base sm:leading-normal"
@@ -154,7 +170,7 @@ const currentPath = Astro.url.pathname;
   const joinProBtn = document.getElementById("joinProBtn");
   if (joinProBtn) {
     joinProBtn.addEventListener("click", () => {
-      const pricingSection = document.querySelector("section.py-12.bg-gray-50");
+      const pricingSection = document.querySelector("section.py-12");
       if (pricingSection) {
         pricingSection.scrollIntoView({ behavior: "smooth" });
       }
