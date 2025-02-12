@@ -1,0 +1,42 @@
+---
+import { testimonials } from "../data/testimonials";
+
+interface Props {
+  id?: number | number[];
+}
+
+const { id = [1] } = Astro.props; // Default to showing Deric's testimonial
+
+const getTestimonialsByIds = (ids: number | number[]) => {
+  if (Array.isArray(ids)) {
+    return testimonials.filter((testimonial) => ids.includes(testimonial.id));
+  }
+  return testimonials.filter((testimonial) => testimonial.id === ids);
+};
+
+const selectedTestimonials = getTestimonialsByIds(id);
+---
+
+<div class="py-16">
+  <div class="space-y-12">
+    {
+      selectedTestimonials.map((testimonial) => (
+        <div class="flex items-center gap-6 max-w-2xl mx-auto">
+          <img
+            src={testimonial.imageUrl}
+            alt={testimonial.name}
+            class="w-20 h-20 rounded-full object-cover flex-shrink-0"
+          />
+          <div>
+            <blockquote class="text-lg text-gray-700 mb-2">
+              "{testimonial.content}"
+            </blockquote>
+            <cite class="text-gray-900 font-medium not-italic">
+              {testimonial.name} - {testimonial.business}
+            </cite>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

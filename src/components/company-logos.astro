@@ -1,0 +1,100 @@
+---
+// Import company logos
+const companies = [
+  {
+    name: "Sigma School",
+    logo: "/company-logos/sigma.jpg",
+  },
+  {
+    name: "Next Level Academy",
+    logo: "/company-logos/nla.jpg",
+  },
+  {
+    name: "Olively English",
+    logo: "/company-logos/olively.jpg",
+  },
+  {
+    name: "IB Super Tuition",
+    logo: "/company-logos/ibsuper.jpg",
+  },
+  {
+    name: "Ministry of Physics",
+    logo: "/company-logos/mos.jpg",
+  },
+  {
+    name: "Montessori Garden Singapore",
+    logo: "/company-logos/montessori.jpg",
+  },
+  {
+    name: "Physics Academy",
+    logo: "/company-logos/physics-academy.jpg",
+  },
+  {
+    name: "Love 2 Learn",
+    logo: "/company-logos/love-2-learn.jpg",
+  },
+];
+---
+
+<div class="py-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">
+      Companies We've Helped
+    </h2>
+  </div>
+
+  <div
+    class="relative overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-[100px] before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-[100px] after:bg-gradient-to-l after:from-white after:to-transparent">
+    <div class="flex animate-scroll">
+      {/* First set of logos */}
+      <div class="flex items-center space-x-16 min-w-full">
+        {
+          companies.map((company) => (
+            <div class="flex-shrink-0 w-32 h-20">
+              <img
+                src={company.logo}
+                alt={`${company.name} logo`}
+                class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Duplicate set for seamless scrolling */}
+      <div class="flex items-center space-x-16 min-w-full">
+        {
+          companies.map((company) => (
+            <div class="flex-shrink-0 w-32 h-20">
+              <img
+                src={company.logo}
+                alt={`${company.name} logo`}
+                class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>

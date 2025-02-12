@@ -1,8 +1,9 @@
 ---
 import Companies from "@components/companies.astro";
-import Testimonials from "@components/testimonials.astro";
+import TestimonialsGrid from "@components/testimonials-grid.astro";
 import Container from "@components/container.astro";
 import Hero from "@components/hero.astro";
+import CompanyLogos from "@components/company-logos.astro";
 import Layout from "@layouts/Layout.astro";
 import Services from "@components/services.astro";
 ---
@@ -10,8 +11,9 @@ import Services from "@components/services.astro";
 <Layout title="">
   <Container>
     <Hero />
+    <CompanyLogos />
     <Services />
     <Companies />
-    <Testimonials />
+    <TestimonialsGrid limit={4} />
   </Container>
 </Layout>

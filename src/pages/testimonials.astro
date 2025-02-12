@@ -1,0 +1,19 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import TestimonialsGrid from "@components/testimonials-grid.astro";
+---
+
+<Layout title="Success Stories">
+  <Container>
+    <div class="max-w-4xl mx-auto py-12">
+      <h1 class="text-4xl font-bold text-center mb-8">Success Stories</h1>
+      <p class="text-xl text-gray-600 text-center mb-16">
+        See how other education business owners have transformed their
+        businesses
+      </p>
+
+      <TestimonialsGrid showAll={true} showTitle={false} />
+    </div>
+  </Container>
+</Layout>
