@@ -1,0 +1,145 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+---
+
+<Layout title="Marketing Conversion Calculator">
+  <Container>
+    <div class="max-w-3xl mx-auto py-12">
+      <h1 class="text-4xl font-bold text-center mb-8">
+        Marketing Conversion Calculator
+      </h1>
+      <p class="text-xl text-gray-600 text-center mb-12">
+        Track and optimize your marketing funnel conversion rates
+      </p>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <form id="conversionCalculator" class="space-y-6">
+          <div class="grid md:grid-cols-1 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Number of Leads
+              </label>
+              <input
+                type="number"
+                id="leads"
+                min="0"
+                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Number of Show Ups (Free Trial/Consultation)
+              </label>
+              <input
+                type="number"
+                id="showUps"
+                min="0"
+                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Number of Sign Ups
+              </label>
+              <input
+                type="number"
+                id="signUps"
+                min="0"
+                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors">
+            Calculate Conversion Rates
+          </button>
+        </form>
+
+        <div id="results" class="mt-8 hidden">
+          <h3 class="text-lg font-semibold mb-4">Conversion Analysis:</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between p-4 bg-gray-50 rounded-lg">
+              <span>Lead to Show Up Rate:</span>
+              <span id="showUpRate" class="font-bold"></span>
+            </div>
+            <div class="flex justify-between p-4 bg-gray-50 rounded-lg">
+              <span>Show Up to Sign Up Rate:</span>
+              <span id="signUpRate" class="font-bold"></span>
+            </div>
+            <div class="flex justify-between p-4 bg-green-50 rounded-lg">
+              <span>Overall Conversion Rate:</span>
+              <span id="overallRate" class="font-bold text-green-600"></span>
+            </div>
+            <div
+              id="conversionTip"
+              class="hidden p-4 bg-yellow-50 rounded-lg text-sm">
+              <p class="text-yellow-800">
+                <span class="font-semibold">💡 Tips to Improve:</span>
+                <ul class="list-disc ml-5 mt-2 space-y-1">
+                  <li>
+                    Lead to Show Up &lt; 50%: Consider improving lead
+                    qualification and follow-up process
+                  </li>
+                  <li>
+                    Show Up to Sign Up &lt; 30%: Review your sales presentation
+                    and offer structure
+                  </li>
+                  <li>
+                    Overall Rate &lt; 15%: Focus on both lead nurturing and
+                    sales process optimization
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+  const form = document.getElementById("conversionCalculator");
+  const results = document.getElementById("results");
+  const showUpRateEl = document.getElementById("showUpRate");
+  const signUpRateEl = document.getElementById("signUpRate");
+  const overallRateEl = document.getElementById("overallRate");
+  const conversionTip = document.getElementById("conversionTip");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const leads = Number(
+      (document.getElementById("leads") as HTMLInputElement).value,
+    );
+    const showUps = Number(
+      (document.getElementById("showUps") as HTMLInputElement).value,
+    );
+    const signUps = Number(
+      (document.getElementById("signUps") as HTMLInputElement).value,
+    );
+
+    const showUpRate = (showUps / leads) * 100;
+    const signUpRate = (signUps / showUps) * 100;
+    const overallRate = (signUps / leads) * 100;
+
+    showUpRateEl!.textContent = `${showUpRate.toFixed(1)}%`;
+    signUpRateEl!.textContent = `${signUpRate.toFixed(1)}%`;
+    overallRateEl!.textContent = `${overallRate.toFixed(1)}%`;
+
+    // Show tips based on conversion rates
+    if (conversionTip) {
+      conversionTip.classList.remove("hidden");
+    }
+
+    results?.classList.remove("hidden");
+  });
+</script>

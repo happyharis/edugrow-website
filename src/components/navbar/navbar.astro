@@ -10,11 +10,24 @@ const menuitems = [
     path: "/testimonials",
   },
   {
-    title: "Resources",
+    title: "Tools",
     path: "#",
     children: [
-      { title: "YouTube", path: "https://www.youtube.com/@edu-grow" },
-      { title: "FaceBook Group", path: "https://edu8.org/fb-group" },
+      {
+        title: "Revenue Calculator",
+        path: "/tools/revenue-calculator",
+        description: "Calculate your potential revenue growth",
+      },
+      {
+        title: "Price Increase Calculator",
+        path: "/tools/price-calculator",
+        description: "See the impact of raising your prices",
+      },
+      {
+        title: "Marketing Conversion Calculator",
+        path: "/tools/marketing-calculator",
+        description: "Track your marketing funnel performance",
+      },
     ],
   },
   {
@@ -54,13 +67,13 @@ const currentPath = Astro.url.pathname;
   <Container>
     <a href="/pro-group" class="block group">
       <div class="flex items-center justify-center space-x-2">
-        <span class="text-yellow-400 text-base">🎁</span>
-        <span class="text-xs sm:text-base"
-          >FREE PRO Group Trial (Worth $400). Only {daysLeft} days left</span
+        <span class="text-yellow-400 text-base">🤫</span>
+        <span class="text-[10px] leading-tight sm:text-base sm:leading-normal"
+          >4 Secrets How I Grow to 7 Figure Education Business + BONUS</span
         >
         <span
-          class="ml-2 text-xs sm:text-sm bg-white/10 group-hover:bg-white/20 px-3 py-1 rounded-full transition-colors">
-          Learn More →
+          class="ml-2 text-[10px] sm:text-sm bg-white/10 group-hover:bg-white/20 px-2 sm:px-3 py-1 rounded-full transition-colors whitespace-nowrap">
+          I'M INTERESTED →
         </span>
       </div>
     </a>
